@@ -1,0 +1,18 @@
+{
+  "colors": {
+    "primary_color": "#FF6cba",
+    "secondary_color": "#ff0000",
+    "tertiary_color": "#464646",
+    "accent_color": "#FF6cba",        
+    "button_solid_background_color": "#444466",
+    "button_solid_text_color": "#999999",
+    "button_solid_border_color": "#999999",
+    "button_outline_background_color": "transparent",
+    "button_outline_text_color": "#222222",
+    "button_outline_border_color": "#222222"
+  },
+  "fonts": {
+    "body_font_family": "'Verdana', sans-serif",
+    "heading_font_family": "'Verdana', sans-serif"
+  }
+}
