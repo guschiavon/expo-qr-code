@@ -1,40 +1,40 @@
 {
-  "photographers": [
-     {
-      "nickname": "bruno",
-      "name": "Bruno Santos",
-      "profile_image": "",
-      "bio": "Lorem ",
-      "email": "",
-      "website": "",
-      "instagram": ""
-    },
-    {
-      "nickname": "fer",
-      "name": "Fer Santos",
-      "profile_image": "",
-      "bio": "Lorem ",
-      "email": "",
-      "website": "",
-      "instagram": ""
-    },
-    {
-      "nickname": "gus",
-      "name": "Gus Schiavon",
-      "profile_image": "",
-      "bio": "Lorem ",
-      "email": "",
-      "website": "",
-      "instagram": ""
-    },    
-    {
-      "nickname": "thais",
-      "name": "Raiz Itapema",
-      "profile_image": "",
-      "bio": "Lorem ",
-      "email": "",
-      "website": "",
-      "instagram": ""
-    }
-  ]
+	"photographers": [
+		{
+			"nickname": "bruno",
+			"name": "Bruno Santos",
+			"profile_image": "",
+			"bio": "Lorem ",
+			"email": "",
+			"website": "brunosantosphoto.com",
+			"instagram": ""
+		},
+		{
+			"nickname": "fer",
+			"name": "Fer Santos",
+			"profile_image": "",
+			"bio": "Lorem ",
+			"email": "",
+			"website": "",
+			"instagram": ""
+		},
+		{
+			"nickname": "gus",
+			"name": "Gus Schiavon",
+			"profile_image": "",
+			"bio": "Lorem ",
+			"email": "",
+			"website": "",
+			"instagram": ""
+		},
+		{
+			"nickname": "thais",
+			"name": "Raiz Itapema",
+			"profile_image": "",
+			"bio": "Lorem ",
+			"email": "",
+			"website": "",
+			"instagram": ""
+		}
+	]
 }
