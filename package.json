@@ -7,8 +7,5 @@
     "postcss-import": "^14.0.1",
     "purgecss": "^4.0.3",
     "tailwindcss": "^2.1.1"
-  },
-  "dependencies": {
-    "caniuse-lite": "^1.0.30001271"
   }
 }

@@ -1,6 +1,12 @@
 cloudcannon:
   data: true
 
+collections:
+  art:
+    output: true
+    path: /:title
+
+
 sass:
   dir: _sass
   style: compressed  
@@ -16,19 +22,20 @@ comments:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-webp
+  # - jekyll-webp
+  - jekyll_picture_tag
   - jekyll-postcss
   - jekyll-purgecss
 
-webp:
-  enabled: true
-  nested: true
-  img_dir: ["/assets/images"]
-  regenerate: false
+# webp:
+#   enabled: true
+#   nested: true
+#   img_dir: ["/assets/images"]
+#   regenerate: false
 
 picture:
-  source: "assets/images"
-  output: "assets/images/srcset"
+  source: "/"
+  output: "srcset/"
   suppress_warnings: true
 
 channels:
@@ -43,3 +50,9 @@ channels:
   - "Telegram"
   - "Signal"
   - "Messenger"
+
+artists:
+  - "bruno"  
+  - "gus"
+  - "fer"
+  - "thais"

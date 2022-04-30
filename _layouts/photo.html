@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% assign name = page.artist %}
+{% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains name" %}
+{% for artist in creator %}
+
+<main class="container mx-auto px-12 py-12 bg-gray-100 shadow-lg">
+  <div class="flex flex-col lg:flex-row gap-8 mb-6">
+    <div class="h-50 md:h-80 overflow-hidden rounded-md flex-shrink-0" style="aspect-ratio: 16 / 9;">
+      {% picture jpt-webp "{{page.image}}" --picture class="object-contain w-full h-full" %}
+    </div>
+    <div class="flex flex-col gap-2">
+      <h1 class="font-bold text-4xl border-b-4 border-blue-900">{{page.title}}</h1>
+      <p class="font-semibold text-blue-900">{{artist.name | prepend: "Por "}}</p>
+      <div class="flex flex-row items-center justify-items-start gap-3">
+        <a href="{{creator.website}}" class="w-10 h-10">
+          <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">          
+        </a>
+        <a href="{{creator.instagram}}" class="w-10 h-10">
+          <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">          
+        </a>        
+      </div>
+      <p class="">{{page.dimensions | prepend: "Dimensões: "}}</p>
+      <p>{{page.print_standard | prepend: 'Impressão em '}}</p>
+      <p class="font-bold text-2xl">{{page.price | prepend: "R$"}}</p>
+    </div>
+  </div>  
+  <div class="flex flex-col gap-6 mb-6">
+    <p class="font-light">{{page.description}}</p>
+  </div>
+  <a href="mailto:{{creator.email}}" target="_blank" class="px-3 py-2 inline-block text-gray-50 bg-blue-600 uppercase">
+    Tenho interesse
+  </a>
+</main>
+<section class="container mx-auto py-12 px-12">
+  <div class="">
+    <img src="" alt="">
+  </div>
+  <h2 class="font-bold text-2xl text-gray-800 border-b-2 border-blue-900">{{artist.name}}</h2>
+  <p class="font-light">{{artist.bio}}</p>
+</section>
+<section class="container mx-auto py-12 px-12 ">
+  <h2 class="font-bold text-2xl mb-6 text-blue-900">Mais imagens por {{artist.name}}:</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% assign other_images = site.art | where_exp: "item", "item.artist contains name"%}
+    {% for item in other_images %}
+    <a href="{{item.url}}" class="col-span-1 shadow-lg">
+      <div class="flex flex-col">
+        <div class="h-30 lg:h-40 overflow-hidden rounded-t-md">
+          <img src="{{item.image}}" alt="" class="object-cover w-full h-full">
+        </div>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6">
+          <h3 class="font-bold text-xl">{{item.title}}</h3>
+          <p>{{item.dimensions}}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+  {% endfor %}

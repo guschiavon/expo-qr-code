@@ -37,7 +37,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    jekyll-webp (1.0.0)
     jekyll_picture_tag (2.0.3)
       addressable (~> 2.6)
       jekyll (~> 4.0)
@@ -85,7 +84,6 @@ DEPENDENCIES
   jekyll-postcss
   jekyll-purgecss
   jekyll-sitemap
-  jekyll-webp (= 1.0.0)
   jekyll_picture_tag (~> 2.0)
   webrick
 

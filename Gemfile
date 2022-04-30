@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 
   group :jekyll_plugins do
     gem 'jekyll-sitemap'
-    gem 'jekyll-webp', '1.0.0'
+    # gem 'jekyll-webp', '1.0.0'
     gem 'jekyll-postcss'
     gem 'jekyll-purgecss'
     gem 'jekyll_picture_tag', '~> 2.0'
