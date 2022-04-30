@@ -12,7 +12,7 @@
     "button_outline_border_color": "#222222"
   },
   "fonts": {
-    "body_font_family": "'Verdana', sans-serif",
-    "heading_font_family": "'Verdana', sans-serif"
+    "body_font_family": "'Oswald', sans-serif",
+    "heading_font_family": "'Oswald', sans-serif"
   }
 }

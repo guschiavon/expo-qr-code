@@ -6,18 +6,18 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
 {% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains name" %}
 {% for artist in creator %}
 
-<main class="container mx-auto px-12 py-12 bg-gray-100 shadow-lg mb-6">
-  <div class="flex flex-col lg:flex-row gap-8 mb-6">
-    <div class="h-50 md:h-96 overflow-hidden rounded-md flex-shrink-0" style="aspect-ratio: 16 / 9;">
+<main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
+  <div class="flex flex-col gap-8 mb-6">    
+    <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" style="aspect-ratio: 16 / 9;">
       {% picture jpt-webp "{{page.image}}" --picture class="object-contain w-full h-full" %}
     </div>
+    <p class="text-xl lg:text-2xl font-light">{{page.description | prepend: '"' | append: '"' }}</p>    
     <div class="flex flex-col gap-2">
       <h1 class="font-bold text-4xl border-b-4 border-blue-900">{{page.title}}</h1>
       <p class="font-semibold text-blue-900">{{artist.name | prepend: "Por "}}</p>      
       <p class="">{{page.dimensions | prepend: "Dimensões: "}}</p>
       <p>{{page.print_standard | prepend: 'Impressão em '}}</p>
       <p class="font-bold text-2xl">{{page.price | prepend: "R$"}}</p>
-      <p class="font-light">{{page.description}}</p>
       <div class="">
         <a href="mailto:{{creator.email}}" target="_blank" class="px-3 py-2 inline-block text-gray-50 bg-blue-600 uppercase">
           Tenho interesse
@@ -26,8 +26,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     </div>
   </div>  
 </main>
-<section class="container mx-auto py-12 px-12 bg-gray-700 shadow-lg rounded-md">
-  <div class="flex items-start justify-start gap-4 mb-6">
+<section class="container mx-auto py-12 px-12 bg-gray-700 shadow-lg md:rounded-md md:mb-6">
+  <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
     <div class="flex flex-col flex-shrink-0 gap-4">
       <div class="rounded-full h-32 w-32 overflow-hidden" >
         <img src="{{artist.profile_image}}" alt="{{artist.name}} foto de perfil" class="object-cover w-full h-full">
@@ -47,8 +47,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     <p class="font-light text-gray-200">{{artist.bio}}</p>
   </div>
 </section>
-<section class="container mx-auto py-12 px-12">
-  <h2 class="font-bold text-2xl mb-6 text-blue-900">Mais imagens por {{artist.name}}:</h2>  
+<section class="container mx-auto py-12 px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
+  <h2 class="font-bold text-2xl mb-6 text-blue-900 uppercase">Mais imagens por {{artist.name}}:</h2>  
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {% assign other_images = site.art | where_exp: "item", "item.artist contains name"%}
     {% for item in other_images %}

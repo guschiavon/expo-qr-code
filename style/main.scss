@@ -7,3 +7,5 @@
 @import "tailwindcss/utilities";
 
 {{site.data.settings.configuration.custom_css_code_block}};
+
+@import "/_sass/_universal.scss";

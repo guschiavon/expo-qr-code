@@ -53,6 +53,9 @@ seo:
   site_description_text:
   keywords:
 configuration:
-  head_code_block: 
+  head_code_block: >-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   body_code_block:
   custom_css_code_block:   
