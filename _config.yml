@@ -3,8 +3,9 @@ cloudcannon:
 
 collections:
   art:
+    icon: picture
     output: true
-    path: /:title
+    permalink: /art/:title
 
 
 sass:

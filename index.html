@@ -1,9 +1,37 @@
 ---
 layout: default
+header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
 ---
-<main class="px-24 py-3 h-screen md:px-6 md:bg-gray-200 flex flex-col justify-center items-center">
-  <h1 class="text-6xl font-body text-primary">
-  
-  </h1>
-  
+<!-- <main class="px-24 min-h-screen md:px-6 bg-cover bg-center" style='background-image: url({% picture direct "{{page.header_background_image}}" %});'>
+  <div class="flex flex-col justify-center items-center">
+    <h1 class="text-6xl text-white">
+      Expo The Oak
+    </h1>
+    
+  </div>
 </main>
+<section class="container py-12 md:py-24">
+  <h2 class="font-bold text-3xl">
+    Sobre os artistas
+  </h2>
+</section> -->
+<section class="container mx-auto py-12 px-12">
+  <h2 class="font-bold text-2xl mb-6 text-blue-900">Imagens</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    
+    {% for item in site.art %}
+    <a href="{{item.url}}" class="col-span-1 shadow-lg">
+      <div class="flex flex-col">
+        <div class="h-30 lg:h-40 overflow-hidden rounded-t-md">
+          <img src="{{item.image}}" alt="" class="object-cover w-full h-full">
+        </div>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6">
+          <h3 class="font-bold text-xl">{{item.title}}</h3>
+          <p>{{item.artist}}</p>
+          <p>{{item.dimensions}}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
