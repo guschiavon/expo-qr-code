@@ -2,13 +2,17 @@
 layout: default
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?
 ---
+<div class="container mx-auto mb-6">
+  <a href="/" class="font-body text-2xl font-bold">Home</a>
+</div>
 {% assign name = page.artist %}
 {% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains name" %}
 {% for artist in creator %}
 
 <main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
+    
   <div class="flex flex-col gap-8 mb-6">    
-    <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" style="aspect-ratio: 16 / 9;">
+    <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" >
       {% picture jpt-webp "{{page.image}}" --picture class="object-contain w-full h-full" %}
     </div>
     <p class="text-xl lg:text-2xl font-light">{{page.description | prepend: '"' | append: '"' }}</p>    
@@ -54,7 +58,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     {% for item in other_images %}
     <a href="{{item.url}}" class="col-span-1 shadow-lg">
       <div class="flex flex-col">
-        <div class="h-30 lg:h-40 overflow-hidden rounded-t-md">
+        <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="{{item.image}}" alt="" class="object-cover w-full h-full">
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6">
