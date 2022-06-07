@@ -23,9 +23,15 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
             {{item.title}}
           </h3>
           {% for artist in creator %}
-          <p>
-            {{artist.name}}
-          </p>
+          <div class="flex gap-4 items-center">
+            <div class="h-10 w-10 rounded-full overflow-hidden">
+              <img src="{{artist.profile_image}}" alt="foto de {{artist.name}}" class="object-cover w-full h-full">
+            </div>
+            <p>
+              {{artist.name}}
+            </p>
+            
+          </div>
           {% endfor %}
           <p>
             {{item.dimensions}}
