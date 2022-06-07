@@ -14,7 +14,7 @@
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:alt" content="" />
-<meta property="og:site_name" content="Jekyll Tailwind CloudCannon">
+<meta property="og:site_name" content="RECONECTA - Exposição de Imagens">
 <meta property="og:description" content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?">
 <meta property="fb:app_id" content="">
 
@@ -33,11 +33,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style/main.css">
 </head>
-    <body class="min-h-screen flex flex-col overflow-x-hidden">
+    <body class="min-h-screen flex flex-col overflow-x-hidden bg-gray-800">
       <div class="flex-1 md:py-8">
         <div class="container mx-auto mb-6">
-  <a href="/" class="font-body text-2xl font-bold">Home</a>
+  <a href="/" class="font-body text-2xl font-bold text-yellow-500">Home</a>
 </div>
+
+
 
 
 
@@ -72,7 +74,12 @@
   <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
     <div class="flex flex-col flex-shrink-0 gap-4">
       <div class="rounded-full h-32 w-32 overflow-hidden" >
-        <img src="/assets/images/gus.png" alt="Gus Schiavon foto de perfil" class="object-cover w-full h-full">
+        <picture class="object-cover w-full h-full">
+  <source srcset="/srcset/assets/images/gus-400-22e7cf083.webp 400w, /srcset/assets/images/gus-600-22e7cf083.webp 600w, /srcset/assets/images/gus-632-22e7cf083.webp 632w" type="image/webp">
+  <source srcset="/srcset/assets/images/gus-400-dee3349e0.png 400w, /srcset/assets/images/gus-600-dee3349e0.png 600w, /srcset/assets/images/gus-632-dee3349e0.png 632w" type="image/png">
+  <img alt="Gus Schiavon foto de perfil" src="/srcset/assets/images/gus-632-dee3349e0.png">
+</picture>
+        
       </div>
       <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
         Gus Schiavon
@@ -81,7 +88,7 @@
         <a href="" class="w-8 h-8">
           <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">
         </a>
-        <a href="" class="w-8 h-8">
+        <a href="https://instagram.com/" class="w-8 h-8">
           <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">
         </a>
       </div>
@@ -89,10 +96,50 @@
     <p class="font-light text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?</p>
   </div>
 </section>
+
+<section class="container mx-auto py-12 px-12 bg-yellow-500 shadow-lg md:rounded-md md:mb-6">
+  <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
+    <div class="flex flex-col flex-shrink-0 gap-4">
+      <div class="rounded-full h-32 w-32 overflow-hidden" >
+        <picture class="object-cover w-full h-full">
+  <source srcset="/srcset/assets/images/alice-400-e0b430041.webp 400w, /srcset/assets/images/alice-600-e0b430041.webp 600w, /srcset/assets/images/alice-800-e0b430041.webp 800w, /srcset/assets/images/alice-1000-e0b430041.webp 1000w" type="image/webp">
+  <source srcset="/srcset/assets/images/alice-400-dc503d213.jpeg 400w, /srcset/assets/images/alice-600-dc503d213.jpeg 600w, /srcset/assets/images/alice-800-dc503d213.jpeg 800w, /srcset/assets/images/alice-1000-dc503d213.jpeg 1000w" type="image/jpeg">
+  <img alt="Gus Schiavon foto de perfil" src="/srcset/assets/images/alice-800-dc503d213.jpeg">
+</picture>
+        
+      </div>
+      <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
+        Alice Coelho
+      </h2>
+      <div class="flex flex-row items-center justify-items-start gap-3">
+        <a href="" class="w-8 h-8">
+          <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">
+        </a>
+        <a href="https://instagram.com/" class="w-8 h-8">
+          <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">
+        </a>
+      </div>
+    </div>
+    <p class="font-light text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?</p>
+  </div>
+</section>
+
 <section class="container mx-auto py-12 px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
   <h2 class="font-bold text-2xl mb-6 text-blue-900 uppercase">Mais imagens por Gus Schiavon:</h2>  
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     
+    
+    <a href="/art/contrastes-gus-schiavon" class="col-span-1 shadow-lg">
+      <div class="flex flex-col">
+        <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
+          <img src="/assets/images/contrastes-gus-schiavon.jpg" alt="" class="object-cover w-full h-full">
+        </div>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6">
+          <h3 class="font-bold text-xl">Contrastes</h3>
+          <p>60cm x 40cm</p>
+        </div>
+      </div>
+    </a>
     
     <a href="/art/coqueiros-gus-schiavon" class="col-span-1 shadow-lg">
       <div class="flex flex-col">
@@ -101,7 +148,7 @@
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6">
           <h3 class="font-bold text-xl">Coqueiros</h3>
-          <p>60cm x 40cm</p>
+          <p>60cm x 90cm</p>
         </div>
       </div>
     </a>
@@ -132,7 +179,7 @@
     
   </div>
 </section>
-  
+
       </div>
       
       <!-- All of your non-critical scripts can go here -->

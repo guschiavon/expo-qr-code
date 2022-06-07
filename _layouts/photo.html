@@ -3,10 +3,12 @@ layout: default
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?
 ---
 <div class="container mx-auto mb-6">
-  <a href="/" class="font-body text-2xl font-bold">Home</a>
+  <a href="/" class="font-body text-2xl font-bold text-yellow-500">Home</a>
 </div>
-{% assign name = page.artist %}
-{% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains name" %}
+{% assign pname = page.artist %}
+{% assign coname = page.co-artist %}
+{% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains pname" %}
+{% assign cocreator = site.data.creators.poets | where_exp: "artist", "artist.nickname contains coname" %}
 {% for artist in creator %}
 
 <main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
@@ -34,7 +36,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
   <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
     <div class="flex flex-col flex-shrink-0 gap-4">
       <div class="rounded-full h-32 w-32 overflow-hidden" >
-        <img src="{{artist.profile_image}}" alt="{{artist.name}} foto de perfil" class="object-cover w-full h-full">
+        {% picture jpt-webp "{{artist.profile_image | default: '/assets/images/user.png' }}" --picture class="object-cover w-full h-full" --img alt="{{artist.name}} foto de perfil" %}        
       </div>
       <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
         {{artist.name}}
@@ -43,7 +45,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
         <a href="{{creator.website}}" class="w-8 h-8">
           <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">
         </a>
-        <a href="{{creator.instagram}}" class="w-8 h-8">
+        <a href="https://instagram.com/{{creator.instagram}}" class="w-8 h-8">
           <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">
         </a>
       </div>
@@ -51,10 +53,33 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     <p class="font-light text-gray-200">{{artist.bio}}</p>
   </div>
 </section>
+{% for coartist in cocreator %}
+<section class="container mx-auto py-12 px-12 bg-yellow-500 shadow-lg md:rounded-md md:mb-6">
+  <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
+    <div class="flex flex-col flex-shrink-0 gap-4">
+      <div class="rounded-full h-32 w-32 overflow-hidden" >
+        {% picture jpt-webp "{{coartist.profile_image | default: '/assets/images/user.png' }}" --picture class="object-cover w-full h-full" --img alt="{{artist.name}} foto de perfil" %}        
+      </div>
+      <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
+        {{coartist.name}}
+      </h2>
+      <div class="flex flex-row items-center justify-items-start gap-3">
+        <a href="{{creator.website}}" class="w-8 h-8">
+          <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">
+        </a>
+        <a href="https://instagram.com/{{creator.instagram}}" class="w-8 h-8">
+          <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">
+        </a>
+      </div>
+    </div>
+    <p class="font-light text-gray-200">{{artist.bio}}</p>
+  </div>
+</section>
+{% endfor %}
 <section class="container mx-auto py-12 px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
   <h2 class="font-bold text-2xl mb-6 text-blue-900 uppercase">Mais imagens por {{artist.name}}:</h2>  
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% assign other_images = site.art | where_exp: "item", "item.artist contains name"%}
+    {% assign other_images = site.art | where_exp: "item", "item.artist contains pname"%}
     {% for item in other_images %}
     <a href="{{item.url}}" class="col-span-1 shadow-lg">
       <div class="flex flex-col">
@@ -70,4 +95,4 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     {% endfor %}
   </div>
 </section>
-  {% endfor %}
+{% endfor %}

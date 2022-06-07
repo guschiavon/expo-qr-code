@@ -4,7 +4,7 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
 ---
 
 <section class="container mx-auto py-12 px-12">
-  <h2 class="font-bold text-2xl mb-6 text-blue-900">
+  <h2 class="font-bold text-2xl mb-6 text-yellow-500">
     Imagens
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
@@ -13,9 +13,9 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
     {% assign name = item.artist %}
     {% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains name" %}
     
-    <a href="{{item.url}}" class="col-span-1 shadow-lg">
-      <div class="flex flex-col">
-        <div class="h-30 lg:h-auto overflow-hidden rounded-t-md">
+    <a href="{{item.url}}" class="col-span-1">
+      <div class="flex flex-col rounded-md overflow-hidden art-card">
+        <div class="h-30 lg:h-auto overflow-hidden">
           <img src="{{item.image}}" alt="{% for artist in creator %}{{item.title}} por {{artist.name}}{% endfor %}" class="object-cover w-full h-full">
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6">

@@ -20,9 +20,9 @@ module.exports = {
         "secondary": customTheme.colors.secondary_color,    
         "tertiary": customTheme.colors.tertiary_color,    
         "accent": customTheme.colors.accent_color,
-      }
+      }      
      },    
   },
-  variants: {},
+  variants: {   },
   plugins: [require("@tailwindcss/typography")],
 };

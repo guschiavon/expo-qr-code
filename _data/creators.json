@@ -4,37 +4,56 @@
 			"nickname": "bruno",
 			"name": "Bruno Santos",
 			"profile_image": "",
-			"bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?",
+			"bio": "Bruno Santos, 38 anos, fotógrafo e comunicador em construção. Acredita na fotografia como uma ferramenta muito poderosa de transformação. Traz no seu trabalho uma identidade consistente, baseado na luz, sejam nos ensaios, retratos, projetos autorais e voluntários. Pessoas ou lugares, pelo mesmo olhar atento às luzes e as sombras. Fotografia sem filtros. Mostrar uma beleza real que vai além do que os olhos enxergam.",
 			"email": "",
-			"website": "brunosantosphoto.com",
-			"instagram": ""
+			"website": "https://brunosantosphoto.com",
+			"instagram": "studio.bruno.santos"
 		},
 		{
 			"nickname": "fer",
 			"name": "Fer Santos",
 			"profile_image": "",
-			"bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?",
-			"email": "",
-			"website": "",
-			"instagram": ""
+			"bio": "Fer Santos escolheu a fotografia por amar as coisas simples da vida. Poder retratar, participar e compartilhar momentos únicos somados a experiência de conhecer pessoas e histórias incríveis é o que faz seu coração pulsar mais forte. Entre a razão e a emoção, opta pela segunda que influi no maravilhar-se com gestos e paisagens que ao serem captados por suas lentes transformam-se em memórias duradouras que transpassam vivências e sentimentos genuínos, pois acredita que “se não tocarmos o coração das pessoas, nada do que vivemos tem sentido”.",
+			"email": "contato@fersantos.com.br",
+			"website": "https://www.fersantos.com.br",
+			"instagram": "fersantoss"
 		},
 		{
 			"nickname": "gus",
 			"name": "Gus Schiavon",
 			"profile_image": "/assets/images/gus.png",
 			"bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?",
-			"email": "",
+			"email": "gustavo.schiavon@gmail.com",
 			"website": "",
-			"instagram": ""
+			"instagram": "schiavon.gus"
 		},
 		{
 			"nickname": "thais",
-			"name": "Raiz Itapema",
-			"profile_image": "",
-			"bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?",
+			"name": "Thaís Itapema",
+			"profile_image": "/assets/images/thais.jpeg",
+			"bio": "Thaís Itapema é poetisa visual, e transita no universo das artes utilizando diversas linguagens, como a fotografia analógica e a assemblage. Caminha por imagens arquetípicas, oníricas, e trabalha por manifestá-las através de coletas naturais e materiais inusitados. Tem a vista voltada para a grandeza das insignificâncias. Pactua com os jardins e a metamorfose de seus habitantes.",
 			"email": "",
 			"website": "",
-			"instagram": ""
-		}
-	]
+			"instagram": "raiz.itapema"
+		}],
+		"poets": [
+			{
+				"nickname": "fellipe",
+				"name": "Fellipe Gehr",
+				"profile_image": "",
+				"bio": "Fellipe Gehr, idealizador de @poesiailustrada. 'Escrevo quando não suporto mais aprisionar minhas inquietações, meus desejos mais profundos. Escrevo quando me sinto desafiado por meus próprios sentimentos, pela intensidade que me faz tão mal e é, sem dúvida alguma, um dos motivos de minha existência…'",
+				"email": "",
+				"website": "",
+				"instagram": "poesiailustrada"
+			},
+			{
+				"nickname": "alice",
+				"name": "Alice Coelho",
+				"profile_image": "/assets/images/alice.jpeg",
+				"bio": "Alice Coelho se aventura pelo universo da poesia desde meados de 2011. Em 2013, sua poesia esteve presente no jornal RelevO. Em 2017, lança seu primeiro livro: Ensaios Poéticos de uma Amadora no quesito Amor (Instituto Memória). Em 2019, vem ao mundo seu segundo livro: Toda voz que ecoa por aqui (Editora Madrepérola). Alice “pretende escrever para aqueles que esmiuçam os sentimentos e despem-se de verdades, permitindo-se ser apenas crianças contando nuvens com pequenos desejos”.",
+				"email": "",
+				"website": "",
+				"instagram": ""
+			}
+		]
 }
