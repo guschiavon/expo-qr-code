@@ -2,11 +2,46 @@
 layout: default
 header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
 ---
-
 <section class="container mx-auto py-12 px-12">
-  <h2 class="font-bold text-2xl mb-6 text-yellow-500">
-    Imagens
-  </h2>
+  <div class="flex flex-col items-end md:flex-row gap-8">
+
+    <h1 class="font-bold font-heading text-9xl text-yellow-400 uppercase mb-8">
+      Re<br>co<br>nec<br>ta
+    </h1>
+    <div class="">
+      <div class="flex flex-col gap-4 justify-start items-start mb-8">
+        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1">The Oak Wine & Beer</p>
+        <!-- <span class="text-white text-4xl">|</span> -->
+        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1">13/06 a 30/07</p>
+        <!-- <span class="text-white text-4xl">|</span> -->
+        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1">Exposição fotográfica e mostra literária</p>
+      </div>
+      <p class="text-gray-100 font-body font-light text-2xl mb-8">Imagens que trazem uma mensagem
+      Visual e escrita.
+      Fotógrafxs e escritores curitibanos se
+      reunem com o intuito de causar uma
+      interAÇÃO com o público através de
+      suas imagens e textos.
+      O mundo que vivemos hoje passa por
+      sérias questões, que trazem inúmeras
+      consequências negativas para a vida
+      das pessoas.
+      Como se manter firme e continuar
+      acreditando que podemos mudar
+      esse cenário?
+      Como resgatar a esperança nas
+      pessoas e cuidar do Planeta que
+      vivemos?<br><br>      
+      São questões assim, que permeiam
+      essa exposição.<br>
+      Um suspiro de esperança e
+      positividade.<br>
+      Uma luz Solar no fim do túnel.<br>
+      Um brilho.<br>
+      Um chamado de amor e paz.</p>  
+      
+    </div>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
     
     {% for item in site.art %}
@@ -30,7 +65,7 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
             <p>
               {{artist.name}}
             </p>
-            
+
           </div>
           {% endfor %}
           <p>
