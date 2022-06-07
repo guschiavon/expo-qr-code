@@ -59,21 +59,21 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
   <div class="flex flex-col md:flex-row items-start justify-start gap-8 mb-6">
     <div class="flex flex-col flex-shrink-0 gap-4">
       <div class="rounded-full h-32 w-32 overflow-hidden" >
-        {% picture jpt-webp "{{coartist.profile_image | default: '/assets/images/user.png' }}" --picture class="object-cover w-full h-full" --img alt="{{artist.name}} foto de perfil" %}        
+        {% picture jpt-webp "{{coartist.profile_image | default: '/assets/images/user.png' }}" --picture class="object-cover w-full h-full" --img alt="{{coartist.name}} foto de perfil" %}        
       </div>
       <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
         {{coartist.name}}
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
-        <a href="{{creator.website}}" class="w-8 h-8">
+        <a href="{{coartist.website}}" class="w-8 h-8">
           <img src="/assets/graphics/language_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="object-cover w-full h-full">
         </a>
-        <a href="https://instagram.com/{{creator.instagram}}" class="w-8 h-8">
+        <a href="https://instagram.com/{{coartist.instagram}}" class="w-8 h-8">
           <img src="/assets/graphics/instagram.svg" alt="" class="object-cover w-full h-full">
         </a>
       </div>
     </div>
-    <p class="font-light text-gray-200">{{artist.bio}}</p>
+    <p class="font-light text-gray-200">{{coartist.bio}}</p>
   </div>
 </section>
 {% endfor %}
