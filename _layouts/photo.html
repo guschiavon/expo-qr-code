@@ -6,8 +6,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
   <a href="/" class="relative font-body text-base p-4 md:text-2xl font-light underline text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="rgb(251, 191, 36)">
     <path
       d="M8 42V18L24.1 6L40 18V42H28.3V27.75H19.65V42ZM11 39H16.65V24.75H31.3V39H37V19.5L24.1 9.75L11 19.5ZM24 24.35Z" />
-  </svg></a>
-  <!-- <h1 class="font-bold font-heading text-6xl md:text-9xl text-yellow-400 uppercase mb-8">Reconecta</h1> -->
+  </svg></a>  
 </div>
 {% assign pname = page.artist %}
 {% assign coname = page.co-artist %}
@@ -16,7 +15,6 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
 {% for artist in creator %}
 
 <main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
-    
   <div class="flex flex-col gap-8 mb-6">    
     <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" >
       {% picture jpt-webp "{{page.image | default: '/assets/images/placeholder.jpg'}}" --picture class="object-contain w-full h-full" %}
@@ -27,6 +25,12 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
       <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Por "}}</p>      
       <p class="font-body">{{page.dimensions | prepend: "Dimensões: "}}</p>
       <p class="font-body">{{page.print_standard | prepend: 'Impressão em '}}</p>
+      <div class="flex gap-2 items-center">
+        <p class="font-body">Qualidade </p>
+        <div class="w-24">
+          {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}          
+        </div>
+      </div>
       <p class="font-bold text-2xl">{{page.price | prepend: "R$"}}</p>
       <div class="">
         <a href="mailto:{{creator.email}}" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
