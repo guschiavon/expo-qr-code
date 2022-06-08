@@ -15,9 +15,9 @@ general:
       url: 'https://facebook.com'
 branding:
   site_title: RECONECTA - Exposição de Imagens
-  nav_logo_image: /assets/images/logo.png
+  nav_logo_image:
   footer_logo_image:
-  preview_image:
+  preview_image: /assets/images/site-preview.png
 navigation:
   menus:
     - name: About
