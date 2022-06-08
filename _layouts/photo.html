@@ -19,14 +19,14 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     
   <div class="flex flex-col gap-8 mb-6">    
     <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" >
-      {% picture jpt-webp "{{page.image}}" --picture class="object-contain w-full h-full" %}
+      {% picture jpt-webp "{{page.image | default: '/assets/images/placeholder.jpg'}}" --picture class="object-contain w-full h-full" %}
     </div>
     <p class="text-xl lg:text-2xl font-light">{{page.description | prepend: '"' | append: '"' }}</p>    
     <div class="flex flex-col gap-2">
-      <h1 class="font-bold text-4xl border-b-4 border-yellow-500">{{page.title}}</h1>
+      <h2 class="font-bold text-4xl border-b-4 border-yellow-500">{{page.title}}</h2>
       <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Por "}}</p>      
-      <p class="">{{page.dimensions | prepend: "Dimensões: "}}</p>
-      <p>{{page.print_standard | prepend: 'Impressão em '}}</p>
+      <p class="font-body">{{page.dimensions | prepend: "Dimensões: "}}</p>
+      <p class="font-body">{{page.print_standard | prepend: 'Impressão em '}}</p>
       <p class="font-bold text-2xl">{{page.price | prepend: "R$"}}</p>
       <div class="">
         <a href="mailto:{{creator.email}}" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
@@ -88,7 +88,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     <a href="{{item.url}}" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
-          <img src="{{item.image}}" alt="" class="object-cover w-full h-full">
+          {% picture jpt-webp "{{item.image | default: '/assets/images/placeholder.jpg'}}" --img class="object-cover w-full h-full" %}          
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
           <h3 class="font-bold text-2xl">{{item.title}}</h3>

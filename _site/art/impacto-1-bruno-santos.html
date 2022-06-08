@@ -61,10 +61,10 @@
     </div>
     <p class="text-xl lg:text-2xl font-light">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?"</p>    
     <div class="flex flex-col gap-2">
-      <h1 class="font-bold text-4xl border-b-4 border-yellow-500">Impacto 1</h1>
+      <h2 class="font-bold text-4xl border-b-4 border-yellow-500">Impacto 1</h2>
       <p class="font-semibold text-yellow-600">Por Bruno Santos</p>      
-      <p class="">Dimensões: 40cm x 60cm</p>
-      <p>Impressão em Felix Schoeller True Fibre 200g/m2</p>
+      <p class="font-body">Dimensões: 40cm x 60cm</p>
+      <p class="font-body">Impressão em Felix Schoeller True Fibre 200g/m2</p>
       <p class="font-bold text-2xl">R$1300</p>
       <div class="">
         <a href="mailto:" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
@@ -109,7 +109,12 @@
     <a href="/art/impacto-1-bruno-santos" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
-          <img src="/assets/images/impacto-1-bruno-santos.jpg" alt="" class="object-cover w-full h-full">
+          <picture>
+  <source srcset="/srcset/assets/images/impacto-1-bruno-santos-400-fa0393877.webp 400w, /srcset/assets/images/impacto-1-bruno-santos-600-fa0393877.webp 600w, /srcset/assets/images/impacto-1-bruno-santos-800-fa0393877.webp 800w, /srcset/assets/images/impacto-1-bruno-santos-1000-fa0393877.webp 1000w" type="image/webp">
+  <source srcset="/srcset/assets/images/impacto-1-bruno-santos-400-21dd7ce2c.jpg 400w, /srcset/assets/images/impacto-1-bruno-santos-600-21dd7ce2c.jpg 600w, /srcset/assets/images/impacto-1-bruno-santos-800-21dd7ce2c.jpg 800w, /srcset/assets/images/impacto-1-bruno-santos-1000-21dd7ce2c.jpg 1000w" type="image/jpeg">
+  <img class="object-cover w-full h-full" src="/srcset/assets/images/impacto-1-bruno-santos-800-21dd7ce2c.jpg">
+</picture>
+          
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
           <h3 class="font-bold text-2xl">Impacto 1</h3>
