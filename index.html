@@ -98,6 +98,11 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
               {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}              
             </div>
           </div>
+          {% for artist in creator %}
+          <p class="font-body text-xs">
+            Imagem © {{artist.name}} | Todos os direitos reservados
+          </p>
+          {% endfor %}
         </div>
       </div>
     </a>

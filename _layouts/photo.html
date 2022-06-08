@@ -3,10 +3,7 @@ layout: default
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est aperiam, asperiores nobis veniam voluptatem sit unde illo quae reiciendis, possimus ipsum, mollitia beatae officiis magnam distinctio numquam nisi laborum?
 ---
 <div class="container mx-auto mb-6">
-  <a href="/" class="relative font-body text-base p-4 md:text-2xl font-light underline text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="rgb(251, 191, 36)">
-    <path
-      d="M8 42V18L24.1 6L40 18V42H28.3V27.75H19.65V42ZM11 39H16.65V24.75H31.3V39H37V19.5L24.1 9.75L11 19.5ZM24 24.35Z" />
-  </svg></a>  
+  <a href="/" class="inline-block font-body text-base p-4 md:text-2xl font-light underline text-yellow-400 w-20"><img src="/assets/graphics/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home icon" class="object-contain w-full h-full"></a>  
 </div>
 {% assign pname = page.artist %}
 {% assign coname = page.co-artist %}
@@ -22,24 +19,34 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     <p class="text-xl lg:text-2xl font-light">{{page.description | prepend: '"' | append: '"' }}</p>    
     <div class="flex flex-col gap-2">
       <h1 class="font-bold text-4xl border-b-4 border-yellow-500">{{page.title}}</h1>
-      <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Por "}}</p>  
-      {% for co in cocreator %}    
-      <p class="font-semibold text-yellow-600">{{co.name | prepend: "Texto por "}}</p>
-      {% endfor %}      
-      <p class="font-body">{{page.dimensions | prepend: "Dimensões: "}}</p>
+      <div class="">
+        <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Imagem de "}}</p>  
+        {% for co in cocreator %}    
+        <p class="font-semibold text-yellow-600">{{co.name | prepend: "Texto por "}}</p>
+        {% endfor %}      
+      </div>
+      <p class="font-body text-lg font-bold">{{page.dimensions | prepend: "Dimensões: "}}</p>
       <p class="font-body">{{page.print_standard | prepend: 'Impressão em '}}</p>
-      <div class="flex gap-2 items-center">
+      <p class="font-body">{{page.number_of_prints | prepend: 'Tiragem limitada a ' | append: ' impressões'}}</p>
+
+      <div class="flex gap-2 items-center mb-5">
         <p class="font-body">Qualidade </p>
         <div class="w-24">
           {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}          
         </div>
       </div>
-      <p class="font-bold text-2xl">{{page.price | prepend: "R$"}}</p>
-      <div class="">
+      <p class="font-bold text-3xl ">{{page.price | prepend: "R$"}}</p>
+      <div class="mb-6">
         <a href="mailto:{{creator.email}}" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
           Entre em contato
         </a>
       </div>
+      <p class="font-body text-xs">
+        Imagem © {{artist.name}} | Todos os direitos reservados.
+      </p>
+      {% for co in cocreator %}
+      <p class="font-body text-xs">{{co.name | prepend: "Texto © " | append: ' | Todos os direitos reservados.'}}</p>
+      {% endfor %}
     </div>
   </div>  
 </main>
