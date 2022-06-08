@@ -36,7 +36,10 @@
     <body class="min-h-screen flex flex-col overflow-x-hidden bg-gray-800">
       <div class="flex-1 md:py-8">
         <div class="container mx-auto mb-6">
-  <a href="/" class="relative font-body text-base p-2 md:text-2xl font-light underline text-yellow-400">Voltar à Página Inicial</a>
+  <a href="/" class="relative font-body text-base p-2 md:text-2xl font-light underline text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="rgb(251, 191, 36)">
+    <path
+      d="M8 42V18L24.1 6L40 18V42H28.3V27.75H19.65V42ZM11 39H16.65V24.75H31.3V39H37V19.5L24.1 9.75L11 19.5ZM24 24.35Z" />
+  </svg></a>
   <h1 class="font-bold font-heading text-6xl md:text-9xl text-yellow-400 uppercase mb-8">Reconecta</h1>
 </div>
 
@@ -58,14 +61,14 @@
     </div>
     <p class="text-xl lg:text-2xl font-light">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?"</p>    
     <div class="flex flex-col gap-2">
-      <h1 class="font-bold text-4xl border-b-4 border-blue-900">Texturas do Mar</h1>
-      <p class="font-semibold text-blue-900">Por Gus Schiavon</p>      
+      <h1 class="font-bold text-4xl border-b-4 border-yellow-500">Texturas do Mar</h1>
+      <p class="font-semibold text-yellow-600">Por Gus Schiavon</p>      
       <p class="">Dimensões: 60cm x 60cm</p>
       <p>Impressão em Felix Schoeller True Fibre 200g/m2</p>
       <p class="font-bold text-2xl">R$1000</p>
       <div class="">
-        <a href="mailto:" target="_blank" class="px-3 py-2 inline-block text-gray-50 bg-blue-600 uppercase">
-          Tenho interesse
+        <a href="mailto:" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
+          Entre em contato
         </a>
       </div>
     </div>
@@ -82,7 +85,7 @@
 </picture>
         
       </div>
-      <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-blue-400">
+      <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500">
         Gus Schiavon
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -99,66 +102,121 @@
 </section>
 
 <section class="container mx-auto py-12 px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
-  <h2 class="font-bold text-2xl mb-6 text-blue-900 uppercase">Mais imagens por Gus Schiavon:</h2>  
+  <h2 class="font-bold text-2xl mb-6 text-yellow-600 uppercase">Mais imagens por Gus Schiavon:</h2>  
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     
     
-    <a href="/art/contrastes-gus-schiavon" class="col-span-1 shadow-lg">
+    <a href="/art/contrastes-gus-schiavon" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="/assets/images/contrastes-gus-schiavon.jpg" alt="" class="object-cover w-full h-full">
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-bold text-xl">Contrastes</h3>
-          <p>60cm x 90cm</p>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+          <h3 class="font-bold text-2xl">Contrastes</h3>
+          <div class="flex gap-2">
+            <p class="font-body">
+              60cm x 90cm
+            </p>
+            <span>|</span>
+            <p class="font-body">
+              Tiragem limitada 1/10
+            </p>
+          </div>
+          <p class="font-body">
+            Impressão em papel Felix Schoeller True Fibre 200g/m2
+          </p>
         </div>
       </div>
     </a>
     
-    <a href="/art/coqueiros-gus-schiavon" class="col-span-1 shadow-lg">
+    <a href="/art/coqueiros-gus-schiavon" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="/assets/images/gus-schiavon-0877.jpg" alt="" class="object-cover w-full h-full">
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-bold text-xl">Coqueiros</h3>
-          <p>60cm x 40cm</p>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+          <h3 class="font-bold text-2xl">Coqueiros</h3>
+          <div class="flex gap-2">
+            <p class="font-body">
+              60cm x 40cm
+            </p>
+            <span>|</span>
+            <p class="font-body">
+              Tiragem limitada 1/10
+            </p>
+          </div>
+          <p class="font-body">
+            Impressão em papel Felix Schoeller True Fibre 200g/m2
+          </p>
         </div>
       </div>
     </a>
     
-    <a href="/art/maracaipe-gus-schiavon" class="col-span-1 shadow-lg">
+    <a href="/art/maracaipe-gus-schiavon" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="/assets/images/gus-schiavon-4529.jpg" alt="" class="object-cover w-full h-full">
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-bold text-xl">Maracaípe</h3>
-          <p>60cm x 90cm</p>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+          <h3 class="font-bold text-2xl">Maracaípe</h3>
+          <div class="flex gap-2">
+            <p class="font-body">
+              60cm x 90cm
+            </p>
+            <span>|</span>
+            <p class="font-body">
+              Tiragem limitada 1/5
+            </p>
+          </div>
+          <p class="font-body">
+            Impressão em papel Felix Schoeller True Fibre 200g/m2
+          </p>
         </div>
       </div>
     </a>
     
-    <a href="/art/paraiso-perdido-gus-schiavon" class="col-span-1 shadow-lg">
+    <a href="/art/paraiso-perdido-gus-schiavon" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="/assets/images/gus-schiavon-0001.jpg" alt="" class="object-cover w-full h-full">
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-bold text-xl">Paraíso Perdido</h3>
-          <p>105cm x 60cm</p>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+          <h3 class="font-bold text-2xl">Paraíso Perdido</h3>
+          <div class="flex gap-2">
+            <p class="font-body">
+              105cm x 60cm
+            </p>
+            <span>|</span>
+            <p class="font-body">
+              Tiragem limitada 1/10
+            </p>
+          </div>
+          <p class="font-body">
+            Impressão em papel Felix Schoeller True Fibre 200g/m2
+          </p>
         </div>
       </div>
     </a>
     
-    <a href="/art/texturas-do-mar-gus-schiavon" class="col-span-1 shadow-lg">
+    <a href="/art/texturas-do-mar-gus-schiavon" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
       <div class="flex flex-col">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
           <img src="/assets/images/gus-schiavon-0002.jpg" alt="" class="object-cover w-full h-full">
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-bold text-xl">Texturas do Mar</h3>
-          <p>60cm x 60cm</p>
+        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+          <h3 class="font-bold text-2xl">Texturas do Mar</h3>
+          <div class="flex gap-2">
+            <p class="font-body">
+              60cm x 60cm
+            </p>
+            <span>|</span>
+            <p class="font-body">
+              Tiragem limitada 1/10
+            </p>
+          </div>
+          <p class="font-body">
+            Impressão em papel Felix Schoeller True Fibre 200g/m2
+          </p>
         </div>
       </div>
     </a>
