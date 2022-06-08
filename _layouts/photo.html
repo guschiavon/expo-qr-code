@@ -22,7 +22,10 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
     <p class="text-xl lg:text-2xl font-light">{{page.description | prepend: '"' | append: '"' }}</p>    
     <div class="flex flex-col gap-2">
       <h1 class="font-bold text-4xl border-b-4 border-yellow-500">{{page.title}}</h1>
-      <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Por "}}</p>      
+      <p class="font-semibold text-yellow-600">{{artist.name | prepend: "Por "}}</p>  
+      {% for co in cocreator %}    
+      <p class="font-semibold text-yellow-600">{{co.name | prepend: "Texto por "}}</p>
+      {% endfor %}      
       <p class="font-body">{{page.dimensions | prepend: "Dimensões: "}}</p>
       <p class="font-body">{{page.print_standard | prepend: 'Impressão em '}}</p>
       <div class="flex gap-2 items-center">
