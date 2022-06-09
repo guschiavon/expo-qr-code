@@ -3,7 +3,7 @@
 		{
 			"nickname": "bruno",
 			"name": "Bruno Santos",
-			"profile_image": "",
+			"profile_image": "/assets/images/bruno.jpeg",
 			"bio": "Bruno Santos, 38 anos, fotógrafo e comunicador em construção. Acredita na fotografia como uma ferramenta muito poderosa de transformação. Traz no seu trabalho uma identidade consistente, baseado na luz, sejam nos ensaios, retratos, projetos autorais e voluntários. Pessoas ou lugares, pelo mesmo olhar atento às luzes e as sombras. Fotografia sem filtros. Mostrar uma beleza real que vai além do que os olhos enxergam.",
 			"email": "",
 			"website": "https://brunosantosphoto.com",
@@ -35,25 +35,26 @@
 			"email": "mascataria.onirica@gmail.com",
 			"website": "https://instagram.com/raiz.itapema",
 			"instagram": "raiz.itapema"
-		}],
-		"poets": [
-			{
-				"nickname": "fellipe",
-				"name": "Fellipe Gehr",
-				"profile_image": "/assets/images/fellipe.jpeg",
-				"bio": "Fellipe Gehr, idealizador de @poesiailustrada. 'Escrevo quando não suporto mais aprisionar minhas inquietações, meus desejos mais profundos. Escrevo quando me sinto desafiado por meus próprios sentimentos, pela intensidade que me faz tão mal e é, sem dúvida alguma, um dos motivos de minha existência…'",
-				"email": "",
-				"website": "",
-				"instagram": "poesiailustrada"
-			},
-			{
-				"nickname": "alice",
-				"name": "Alice Coelho",
-				"profile_image": "/assets/images/alice.jpeg",
-				"bio": "Alice Coelho se aventura pelo universo da poesia desde meados de 2011. Em 2013, sua poesia esteve presente no jornal RelevO. Em 2017, lança seu primeiro livro: Ensaios Poéticos de uma Amadora no quesito Amor (Instituto Memória). Em 2019, vem ao mundo seu segundo livro: Toda voz que ecoa por aqui (Editora Madrepérola). Alice “pretende escrever para aqueles que esmiuçam os sentimentos e despem-se de verdades, permitindo-se ser apenas crianças contando nuvens com pequenos desejos”.",
-				"email": "",
-				"website": "",
-				"instagram": ""
-			}
-		]
+		}
+	],
+	"poets": [
+		{
+			"nickname": "fellipe",
+			"name": "Fellipe Gehr",
+			"profile_image": "/assets/images/fellipe.jpeg",
+			"bio": "Fellipe Gehr, idealizador de @poesiailustrada. 'Escrevo quando não suporto mais aprisionar minhas inquietações, meus desejos mais profundos. Escrevo quando me sinto desafiado por meus próprios sentimentos, pela intensidade que me faz tão mal e é, sem dúvida alguma, um dos motivos de minha existência…'",
+			"email": "",
+			"website": "",
+			"instagram": "poesiailustrada"
+		},
+		{
+			"nickname": "alice",
+			"name": "Alice Coelho",
+			"profile_image": "/assets/images/alice.jpeg",
+			"bio": "Alice Coelho se aventura pelo universo da poesia desde meados de 2011. Em 2013, sua poesia esteve presente no jornal RelevO. Em 2017, lança seu primeiro livro: Ensaios Poéticos de uma Amadora no quesito Amor (Instituto Memória). Em 2019, vem ao mundo seu segundo livro: Toda voz que ecoa por aqui (Editora Madrepérola). Alice “pretende escrever para aqueles que esmiuçam os sentimentos e despem-se de verdades, permitindo-se ser apenas crianças contando nuvens com pequenos desejos”.",
+			"email": "",
+			"website": "",
+			"instagram": ""
+		}
+	]
 }
