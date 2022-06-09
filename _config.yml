@@ -9,7 +9,6 @@ collections:
     output: true
     permalink: /art/:title
 
-
 sass:
   dir: _sass
   style: compressed  
@@ -24,17 +23,10 @@ comments:
  custom_css_code_block: 'Add custom styles to your site (SCSS-compatible). This theme uses TailwindCSS 2.1. Important: You might require the assistance of a developer.'
 
 plugins:
-  - jekyll-sitemap
-  # - jekyll-webp
+  - jekyll-sitemap  
   - jekyll_picture_tag
   - jekyll-postcss
   - jekyll-purgecss
-
-# webp:
-#   enabled: true
-#   nested: true
-#   img_dir: ["/assets/images"]
-#   regenerate: false
 
 picture:
   source: "/"
@@ -59,3 +51,7 @@ artists:
   - "gus"
   - "fer"
   - "thais"
+
+co-artists:
+  - "fellipe"
+  - "alice"
