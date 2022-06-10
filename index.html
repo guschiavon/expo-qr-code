@@ -3,53 +3,36 @@ layout: default
 header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
 ---
 <section class="container mx-auto py-12 px-4 md:px-12">
-  <div class="flex flex-col md:items-end md:flex-row gap-8 mb-12 md:mb-8">
-    <h1 class="font-bold font-heading text-8xl md:text-9xl text-yellow-400 uppercase mb-8">
+  <div class="flex flex-col md:items-start md:flex-row gap-8 mb-12">
+    <h1 class="font-bold font-heading text-7xl md:text-8xl lg:text-9xl text-yellow-400 lg:text-right uppercase mb-8 md:mb-0" style="line-height: 0.93;">
       Re<br>co<br>nec<br>ta
     </h1>
-    <div class="">
-      <div class="flex flex-col gap-4 justify-start items-start mb-8">
-        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1 font-light">Exposição fotográfica e mostra literária</p>
-        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1 font-bold">13/06 a 30/07</p>
-        <p class="text-white font-body text-4xl uppercase tracking-widest flex-1 font-bold">The Oak Wine & Beer</p>        
+    <div class="flex flex-col justify-end">
+      <div class="flex flex-col gap-2 justify-start items-start mb-4">
+        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-light">Exposição fotográfica e mostra literária</p>
+        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-bold">13/06 a 30/07</p>
+        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-bold">The Oak Wine & Beer</p>        
       </div>
-      <p class="text-gray-100 font-body font-light text-xl mb-8">Imagens que trazem uma mensagem
-      Visual e escrita.
-      Fotógrafxs e escritores curitibanos se
-      reunem com o intuito de causar uma
-      interAÇÃO com o público através de
-      suas imagens e textos.
-      O mundo que vivemos hoje passa por
-      sérias questões, que trazem inúmeras
-      consequências negativas para a vida
-      das pessoas.
-      Como se manter firme e continuar
-      acreditando que podemos mudar
-      esse cenário?
-      Como resgatar a esperança nas
-      pessoas e cuidar do Planeta que
-      vivemos?<br><br>      
-      São questões assim, que permeiam
-      essa exposição.<br>
-      Um suspiro de esperança e
-      positividade.<br>
-      Uma luz Solar no fim do túnel.<br>
-      Um brilho.<br>
-      Um chamado de amor e paz.</p>  
-      
+      <p class="text-gray-100 font-body font-light text-base md:text-lg mb-4">
+        Imagens que trazem uma mensagem visual e escrita. Fotógrafxs e escritores curitibanos se reunem com o intuito de causar uma interAÇÃO com o público através de suas imagens e textos. O mundo que vivemos hoje passa por sérias questões, que trazem inúmeras consequências negativas para a vida das pessoas. Como se manter firme e continuar acreditando que podemos mudar esse cenário? Como resgatar a esperança nas pessoas e cuidar do Planeta que vivemos?<br><br>
+        São questões assim, que permeiam essa exposição.<br>
+        Um suspiro de esperança e positividade.<br>
+        Uma luz Solar no fim do túnel.<br>
+        Um brilho.<br>
+        Um chamado de amor e paz.
+      </p>    
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-12">
+        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        {% for artist in site.data.creators.photographers %}
+        <p class="font-heading text-yellow-400 uppercase text-lg md:text-xl">{{artist.name}}</p>
+        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        {% endfor %}
+        {% for artist in site.data.creators.poets %}
+        <p class="font-heading text-yellow-400 uppercase text-lg md:text-xl">{{artist.name}}</p>
+        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        {% endfor %}        
+      </div>
     </div>
-  </div>
-  <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
-    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
-    {% for artist in site.data.creators.photographers %}
-    <p class="font-heading text-yellow-500 uppercase text-lg md:text-2xl">{{artist.name}}</p>
-    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
-    {% endfor %}
-    {% for artist in site.data.creators.poets %}
-    <p class="font-heading text-yellow-500 uppercase text-lg md:text-2xl">{{artist.name}}</p>
-    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
-    {% endfor %}
-    
   </div>
   <h2 class="font-heading uppercase text-center sm:text-left font-bold text-2xl text-gray-200 mb-6">
     Realização e Apoio:

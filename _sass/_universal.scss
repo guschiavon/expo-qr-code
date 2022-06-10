@@ -16,6 +16,7 @@ span {
 }
 .art-card:hover {
   box-shadow: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 6px 20px 0 rgba(251, 251, 251, 0.19);
-  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.33s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateY(-2px);
+
 }
