@@ -9,9 +9,9 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
     </h1>
     <div class="flex flex-col justify-end">
       <div class="flex flex-col gap-2 justify-start items-start mb-4">
-        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-light">Exposição fotográfica e mostra literária</p>
-        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-bold">13/06 a 30/07</p>
-        <p class="text-white font-body text-3xl uppercase tracking-widest flex-1 font-bold">The Oak Wine & Beer</p>        
+        <p class="atf-text font-light">Exposição fotográfica e mostra literária</p>
+        <p class="atf-text font-bold">13/06 a 30/07</p>
+        <p class="atf-text font-bold">The Oak Wine & Beer</p>        
       </div>
       <p class="text-gray-100 font-body font-light text-base md:text-lg mb-4">
         Imagens que trazem uma mensagem visual e escrita. Fotógrafxs e escritores curitibanos se reunem com o intuito de causar uma interAÇÃO com o público através de suas imagens e textos. O mundo que vivemos hoje passa por sérias questões, que trazem inúmeras consequências negativas para a vida das pessoas. Como se manter firme e continuar acreditando que podemos mudar esse cenário? Como resgatar a esperança nas pessoas e cuidar do Planeta que vivemos?<br><br>
@@ -22,14 +22,14 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
         Um chamado de amor e paz.
       </p>    
       <div class="flex flex-wrap items-center justify-between gap-2 mb-12">
-        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        <span class="atf-artist text-gray-200"> | </span>
         {% for artist in site.data.creators.photographers %}
-        <p class="font-heading text-yellow-400 uppercase text-lg md:text-xl">{{artist.name}}</p>
-        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        <p class="atf-artist text-yellow-400">{{artist.name}}</p>
+        <span class="atf-artist text-gray-200"> | </span>
         {% endfor %}
         {% for artist in site.data.creators.poets %}
-        <p class="font-heading text-yellow-400 uppercase text-lg md:text-xl">{{artist.name}}</p>
-        <span class="font-heading text-gray-200 uppercase text-lg md:text-xl"> | </span>
+        <p class="atf-artist text-yellow-400">{{artist.name}}</p>
+        <span class="atf-artist text-gray-200"> | </span>
         {% endfor %}        
       </div>
     </div>
@@ -38,16 +38,16 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
     Realização e Apoio:
   </h2>
   <div class="flex flex-wrap gap-8 justify-between items-center mb-12">
-    <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
+    <div class="partner-logo">
       <img src="/assets/images/the-oak.png" alt="logo the oak wine beer">
     </div>
-    <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
+    <div class="partner-logo">
       <img src="/assets/images/ondaeco.png" alt="logo onda eco png">
     </div>
-    <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
+    <div class="partner-logo">
       <img src="/assets/images/clube-do-arquiteto.png" alt="logo clube do arquiteto curitiba">
     </div>
-    <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
+    <div class="partner-logo">
       <img src="assets//images/labadee.png" alt="logo labadee">
     </div>
   </div>
