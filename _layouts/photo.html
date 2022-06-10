@@ -99,12 +99,12 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {% assign other_images = site.art | where_exp: "item", "item.artist contains pname"%}
     {% for item in other_images %}
-    <a href="{{item.url}}" class="col-span-1 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 transition-all">
-      <div class="flex flex-col">
+    <a href="{{item.url}}" class="col-span-1 transform hover:-translate-y-1 transition-all">
+      <div class="flex flex-col shadow-md transform hover:shadow-xl transition-shadow">
         <div class="h-30 lg:h-40 overflow-hidden rounded-t-md" >
-          {% picture jpt-webp "{{item.image | default: '/assets/images/placeholder.jpg'}}" --img class="object-cover w-full h-full" %}          
+          {% picture jpt-webp "{{item.image | default: '/assets/images/placeholder.jpg'}}" --img class="object-cover w-full h-full" loading="lazy" %}          
         </div>
-        <div class="flex flex-col gap-4 bg-gray-300 p-6 rounded-b-md">
+        <div class="flex flex-col justify-between gap-4 bg-gray-300 p-6 rounded-b-md">
           <h3 class="font-bold text-2xl">{{item.title}}</h3>
           <div class="flex gap-2">
             <p class="text-xs sm:text-sm font-body font-light">

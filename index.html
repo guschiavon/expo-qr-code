@@ -3,7 +3,7 @@ layout: default
 header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
 ---
 <section class="container mx-auto py-12 px-4 md:px-12">
-  <div class="flex flex-col md:items-end md:flex-row gap-8 mb-12 md:mb-24">
+  <div class="flex flex-col md:items-end md:flex-row gap-8 mb-12 md:mb-8">
     <h1 class="font-bold font-heading text-8xl md:text-9xl text-yellow-400 uppercase mb-8">
       Re<br>co<br>nec<br>ta
     </h1>
@@ -39,19 +39,33 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
       
     </div>
   </div>
-  <h2 class="font-heading uppercase text-center sm:text-left font-bold text-2xl text-gray-200 mb-6">Realização e Apoio:</h2>
+  <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
+    {% for artist in site.data.creators.photographers %}
+    <p class="font-heading text-yellow-500 uppercase text-lg md:text-2xl">{{artist.name}}</p>
+    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
+    {% endfor %}
+    {% for artist in site.data.creators.poets %}
+    <p class="font-heading text-yellow-500 uppercase text-lg md:text-2xl">{{artist.name}}</p>
+    <span class="font-heading text-gray-200 uppercase text-lg md:text-2xl"> | </span>
+    {% endfor %}
+    
+  </div>
+  <h2 class="font-heading uppercase text-center sm:text-left font-bold text-2xl text-gray-200 mb-6">
+    Realização e Apoio:
+  </h2>
   <div class="flex flex-wrap gap-8 justify-between items-center mb-12">
     <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
-      <img src="/assets/images/the-oak.png" alt="">
+      <img src="/assets/images/the-oak.png" alt="logo the oak wine beer">
     </div>
     <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
-      <img src="/assets/images/ondaeco.png" alt="">
+      <img src="/assets/images/ondaeco.png" alt="logo onda eco png">
     </div>
     <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
-      <img src="/assets/images/clube-do-arquiteto.png" alt="">
+      <img src="/assets/images/clube-do-arquiteto.png" alt="logo clube do arquiteto curitiba">
     </div>
     <div class="md:flex-1 flex-shrink-0 sm:flex-shrink w-40 md:w-20 mx-auto">
-      <img src="assets//images/labadee.png" alt="">
+      <img src="assets//images/labadee.png" alt="logo labadee">
     </div>
   </div>
   <div class="flex flex-wrap items-start">
@@ -62,16 +76,15 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
     
     <a href="{{item.url}}" class="p-2 w-full md:w-1/2 lg:w-1/3">
       <div class="flex flex-col overflow-hidden rounded-md art-card">
-        <div class="h-30 lg:h-auto lg:flex-1 overflow-hidden">
-          {% picture jpt-webp "{{item.image | default: '/assets/images/placeholder.jpg'}}" --img alt="{{item.title}}" class="object-cover w-full h-full" %}
-          
+        <div class="h-96 overflow-hidden">
+          {% picture jpt-webp "{{item.image | default: '/assets/images/placeholder.jpg'}}" --img alt="{{item.title}}" class="object-cover w-full h-full" loading="lazy" %}          
         </div>
         <div class="flex flex-col gap-4 bg-gray-300 p-6">
-          <h3 class="font-heading font-bold text-2xl text-gray-800">
+          <h3 class="flex-1 font-heading font-bold text-2xl text-gray-800">
             {{item.title}}
           </h3>
           {% for artist in creator %}
-          <div class="flex gap-4 items-center">
+          <div class="flex-1 flex gap-4 items-center">
             <div class="h-10 w-10 rounded-full overflow-hidden border-2 border-yellow-400">
               <img src="{{artist.profile_image | default: '/assets/images/user.png'}}" alt="foto de {{artist.name}}" class="object-cover w-full h-full">
             </div>
@@ -80,7 +93,7 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
             </p>
           </div>
           {% endfor %}
-          <div class="flex gap-2">
+          <div class="flex-1 flex gap-2">
             <p class="text-xs sm:text-sm md:text-base font-body">
               {{item.dimensions}}
             </p>
@@ -89,17 +102,17 @@ header_background_image: /assets/images/ilha-do-mel-parana-001.jpg
               Tiragem limitada 1/{{item.number_of_prints}}
             </p>
           </div>
-          <p class="text-xs sm:text-sm md:text-base font-body">
+          <p class="flex-1 text-xs sm:text-sm md:text-base font-body">
             Impressão em papel {{item.print_standard}}
           </p>
-          <div class="flex gap-2 items-center">
+          <div class="flex-1 flex gap-2 items-center">
             <p class="font-body">Qualidade </p>
             <div class="w-24">
               {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}              
             </div>
           </div>
           {% for artist in creator %}
-          <p class="font-body text-xs">
+          <p class="flex-1 font-body text-xs">
             Imagem © {{artist.name}} | Todos os direitos reservados
           </p>
           {% endfor %}

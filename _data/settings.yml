@@ -50,7 +50,8 @@ navigation:
         - name: Item 3
           url: /
 seo:
-  site_description_text:
+  site_description_text: >-
+    Fotógrafxs e escritores curitibanos se reunem com o intuito de causar uma interAÇÃO com o público através de suas imagens e textos.
   keywords:
 configuration:
   head_code_block: >-
