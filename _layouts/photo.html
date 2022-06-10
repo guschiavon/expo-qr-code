@@ -7,8 +7,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur 
 </div>
 {% assign pname = page.artist %}
 {% assign coname = page.co-artist %}
-{% assign creator = site.data.creators.photographers | where_exp: "artist", "artist.nickname contains pname" %}
-{% assign cocreator = site.data.creators.poets | where_exp: "artist", "artist.nickname contains coname" %}
+{% assign creator = site.data.creators.photographers | where_exp: "artist", "artist._nickname contains pname" %}
+{% assign cocreator = site.data.creators.poets | where_exp: "artist", "artist._nickname contains coname" %}
 {% for artist in creator %}
 
 <main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
