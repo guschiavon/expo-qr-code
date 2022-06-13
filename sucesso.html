@@ -1,0 +1,33 @@
+---
+layout: default
+title: Sucesso!
+---
+<main class="container mx-auto py-12">
+  <h1 class="text-yellow-400 text-5xl uppercase font-heading mb-6">
+    Parabéns! Você adquiriu a seguinte imagem:    
+  </h1>
+  <p class="text-3xl text-gray-200 mb-6">
+    "<span id="img-title"></span>" de <span id="img-author"></span>
+  </p>
+  <div class="mb-6">
+    <p class="text-lg text-yellow-400 uppercase p-1 border-2 border-yellow-300 inline-block">Atenção: a confirmação da compra é passível da confirmação de pagamento por parte do artista.</p>
+  </div>
+  <div class="inline-flex flex-row gap-2 md:gap-4">
+    <a id="artist-email" href="" target="_blank" class="p-2 bg-yellow-400 text-white uppercase font-body">Enviar email para artista</a>
+    <a id="artist-wa" href="" target="_blank" class="p-2 bg-yellow-400 text-white uppercase font-body">Contato via WhatsApp</a>
+  </div>
+</main>
+<script>
+  const image = sessionStorage.getItem('image');
+  const imageJSON = JSON.parse(image);
+
+  const title = document.getElementById('img-title');
+  const email = document.getElementById('artist-email');
+  const author = document.getElementById('img-author');
+  const wa = document.getElementById('artist-wa');
+
+  title.innerText = imageJSON.title;
+  author.innerText = imageJSON.author;
+  email.href = 'mailto:' + imageJSON.email;
+  wa.href = 'https://wa.me/' + imageJSON.whatsapp;
+</script>

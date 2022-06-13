@@ -85,7 +85,7 @@
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
           Compre agora
         </a>
-        <a href="https://wa.me/" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
+        <a id="wa-tel" href="https://wa.me/+554196828684" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
           <div class="inline-block w-4 h-4">
             
 
@@ -117,7 +117,7 @@
 </picture>
         
       </div>
-      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="" data-payment-code="">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="" data-wa="+554196828684" data-payment-code="">
         Bruno Santos
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -287,7 +287,7 @@
   const imgDimensions = document.getElementById('art-dimensions');
   const imgStandard = document.getElementById('art-standard');
   const imgPrice = document.getElementById('art-price');
-  const imgAuthor = document.getElementById('artist-name');
+  const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
   let imgUrl = imgSrc.src;
   let price = imgPrice.innerText;
@@ -295,10 +295,12 @@
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
+  let wa = imgAuthor.dataset.wa;  
   let code = imgAuthor.dataset.paymentCode;
   let artInfo = {
     "title": imgTitle,
     "email": email,
+    "whatsapp": wa,
     "author": artist,
     "src": imgUrl,
     "price": price,
