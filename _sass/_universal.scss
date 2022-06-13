@@ -76,11 +76,12 @@ span {
 
 .checkout-form {
   @apply
-  
   flex
   flex-col
   gap-2;  
-  input {
+  input,
+  select,
+  textarea {
     @apply
     font-body
     p-2
