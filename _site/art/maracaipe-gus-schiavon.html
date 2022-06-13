@@ -65,7 +65,7 @@
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="60cm x 90cm">Dimensões em exposição: 60cm x 90cm</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" >Dimensões em exposição: 60cm x 90cm</li>
         
         <li class="text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
         
@@ -86,7 +86,7 @@
         </div>
       </div>
       <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
-      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+      <select name="price" id="art-defs" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
         <option value="1800" data-dimensions="60cm x 90cm">60cm x 90cm - R$1800</option>
         
         
@@ -330,7 +330,7 @@
   const imgSrc = document.getElementById('img-src');
   const imgDimensions = document.getElementById('art-dimensions');
   const imgStandard = document.getElementById('art-standard');
-  const imgPrice = document.getElementById('art-price');
+  const imgDefs = document.getElementById('art-defs');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
   let imgUrl = imgSrc.src;      
@@ -342,9 +342,11 @@
   
   const checkoutBtn = document.getElementById('checkout-btn');
   
-  checkoutBtn.addEventListener('click', function(){        
-    let price = imgPrice.value;   
-    let dimensions = imgPrice.dataset.dimensions;
+  checkoutBtn.addEventListener('click', function(){       
+    let price = imgDefs.value;   
+    let getDimensions = imgDefs.selectedOptions.item(0);
+    let dimensions = getDimensions.dataset.dimensions;
+    
     let artInfo = {
       "title": imgTitle,
       "email": email,

@@ -15,12 +15,12 @@
 <meta property="og:image:width" content="600" />
 <meta property="og:image:alt" content="" />
 <meta property="og:site_name" content="RECONECTA - Exposição de Imagens">
-<meta property="og:description" content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?">
+<meta property="og:description" content="<p>Genu&iacute;na, sabedoria</p><p>que n&atilde;o fala</p><p>est&aacute; nas cores do</p><p>natural</p><p>se veste de eventos</p><p>e avisos</p><p>esculpe paisagens</p><p>maravilha vistas</p><p>invade almas</p><p>e faz esperan&ccedil;ar o</p><p>amanh&atilde;!</p>">
 <!-- <meta property="fb:app_id" content=""> -->
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Paraíso Perdido">
-<meta name="twitter:description" content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?">
+<meta name="twitter:description" content="<p>Genu&iacute;na, sabedoria</p><p>que n&atilde;o fala</p><p>est&aacute; nas cores do</p><p>natural</p><p>se veste de eventos</p><p>e avisos</p><p>esculpe paisagens</p><p>maravilha vistas</p><p>invade almas</p><p>e faz esperan&ccedil;ar o</p><p>amanh&atilde;!</p>">
 <meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
 </picture>
 
     </div>
-    <p class="text-xl lg:text-2xl font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?</p>    
+    <p class="text-xl lg:text-2xl font-light"><p>Genu&iacute;na, sabedoria</p><p>que n&atilde;o fala</p><p>est&aacute; nas cores do</p><p>natural</p><p>se veste de eventos</p><p>e avisos</p><p>esculpe paisagens</p><p>maravilha vistas</p><p>invade almas</p><p>e faz esperan&ccedil;ar o</p><p>amanh&atilde;!</p></p>    
     <div class="flex flex-col gap-2">
       <h1 id="feat-img" class="feat-image-title" data-feat-img-title="Paraíso Perdido">Paraíso Perdido</h1>
       <div>
@@ -65,7 +65,7 @@
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="105cm x 60cm">Dimensões em exposição: 105cm x 60cm</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" >Dimensões em exposição: 105cm x 60cm</li>
         
         <li id="art-standard" class="text-sm list-inside list-disc">Impressão em papel Felix Schoeller True Fibre 200g/m2</li>
         <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
@@ -84,7 +84,7 @@
         </div>
       </div>
       <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
-      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+      <select name="price" id="art-defs" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
         <option value="2500" data-dimensions="105cm x 60cm">105cm x 60cm - R$2500</option>
         
       </select>         
@@ -324,7 +324,7 @@
   const imgSrc = document.getElementById('img-src');
   const imgDimensions = document.getElementById('art-dimensions');
   const imgStandard = document.getElementById('art-standard');
-  const imgPrice = document.getElementById('art-price');
+  const imgDefs = document.getElementById('art-defs');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
   let imgUrl = imgSrc.src;      
@@ -336,9 +336,11 @@
   
   const checkoutBtn = document.getElementById('checkout-btn');
   
-  checkoutBtn.addEventListener('click', function(){        
-    let price = imgPrice.value;   
-    let dimensions = imgPrice.dataset.dimensions;
+  checkoutBtn.addEventListener('click', function(){       
+    let price = imgDefs.value;   
+    let getDimensions = imgDefs.selectedOptions.item(0);
+    let dimensions = getDimensions.dataset.dimensions;
+    
     let artInfo = {
       "title": imgTitle,
       "email": email,
