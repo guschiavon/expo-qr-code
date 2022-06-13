@@ -64,39 +64,43 @@ scripts_code_block: >-
   </div>
 </main>
 <!-- <script src="/js/cc-form.js"></script> -->
-<script>  
-
+<script>    
   // get JSON from session storage and parse info
   const image = sessionStorage.getItem('image');
-  const imageJSON = JSON.parse(image);
-  console.log(imageJSON);
-window.addEventListener('DOMContentLoaded', function(){
-  const imgEl = document.getElementById('selected-img');
-  const title = document.getElementById('img-title');
-  const dimensions = document.getElementById('img-dimensions');
-  const standard = document.getElementById('img-standard');  
-  const value = document.getElementById('img-value');
-  const artist = document.getElementById('img-author');
-  const reference = document.getElementById('img-name');
-  const contact = document.getElementById('to-email');
-  const payment = document.getElementById('payment-code')
+  if (image) {
+
+    const imageJSON = JSON.parse(image);  
+  window.addEventListener('DOMContentLoaded', function(){
+    const imgEl = document.getElementById('selected-img');
+    const title = document.getElementById('img-title');
+    const dimensions = document.getElementById('img-dimensions');
+    const standard = document.getElementById('img-standard');  
+    const value = document.getElementById('img-value');
+    const artist = document.getElementById('img-author');
+    const reference = document.getElementById('img-name');
+    const contact = document.getElementById('to-email');
+    const payment = document.getElementById('payment-code')
+    
+    // Update HTML with info 
   
-  // Update HTML with info 
-
-  imgEl.src = imageJSON.src;
-  dimensions.innerText = imageJSON.dimensions;
-  standard.innerText = imageJSON.standard;  
-  value.innerText = imageJSON.price;
-  title.innerText = imageJSON.title;
-  reference.innerText = imageJSON.title;
-  artist.innerText = imageJSON.author;
-  payment.innerText = imageJSON.payment;
-  reference.setAttribute('value',imageJSON.title);
-  contact.setAttribute('value', imageJSON.email);
-
-  payment.onclick = function() {
-    navigator.clipboard.writeText(payment.innerText)
-    .then(() => {alert('Código copiado com sucesso!')})
-  }  
-})
+    imgEl.src = imageJSON.src;
+    dimensions.innerText = imageJSON.dimensions;
+    standard.innerText = imageJSON.standard;  
+    value.innerText = imageJSON.price;
+    title.innerText = imageJSON.title;
+    reference.innerText = imageJSON.title;
+    artist.innerText = imageJSON.author;
+    payment.innerText = imageJSON.payment;
+    reference.setAttribute('value',imageJSON.title);
+    contact.setAttribute('value', imageJSON.email);
+  
+    payment.onclick = function() {
+      navigator.clipboard.writeText(payment.innerText)
+      .then(() => {alert('Código copiado com sucesso!')})
+    }  
+  })
+  } else if (!image) {
+    alert('Acesso negado. Você deve iniciar o processo de compra de uma imagem primeiro!');
+    location.href = 'https://art.criativosonar.com';
+  }
 </script>

@@ -2,7 +2,7 @@
 layout: default
 title: Sucesso!
 ---
-<main class="container mx-auto py-12">
+<main class="container mx-auto py-12 px-2 md:px-0">
   <h1 class="text-yellow-400 text-5xl uppercase font-heading mb-6">
     Parabéns! Você adquiriu a seguinte imagem:    
   </h1>
@@ -18,16 +18,23 @@ title: Sucesso!
   </div>
 </main>
 <script>
+  
   const image = sessionStorage.getItem('image');
-  const imageJSON = JSON.parse(image);
+  if (image) {
+    const imageJSON = JSON.parse(image);
+  
+    const title = document.getElementById('img-title');
+    const email = document.getElementById('artist-email');
+    const author = document.getElementById('img-author');
+    const wa = document.getElementById('artist-wa');
+  
+    title.innerText = imageJSON.title;
+    author.innerText = imageJSON.author;
+    email.href = 'mailto:' + imageJSON.email;
+    wa.href = 'https://wa.me/' + imageJSON.whatsapp;
 
-  const title = document.getElementById('img-title');
-  const email = document.getElementById('artist-email');
-  const author = document.getElementById('img-author');
-  const wa = document.getElementById('artist-wa');
-
-  title.innerText = imageJSON.title;
-  author.innerText = imageJSON.author;
-  email.href = 'mailto:' + imageJSON.email;
-  wa.href = 'https://wa.me/' + imageJSON.whatsapp;
+  } else if (!image) {
+    alert('Acesso negado');
+    location.href = 'https://art.criativosonar.com';
+  }
 </script>
