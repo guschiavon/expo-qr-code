@@ -121,7 +121,7 @@
 </picture>
         
       </div>
-      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="mascataria.onirica@gmail.com">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="mascataria.onirica@gmail.com" data-payment-code="">
         Thaís Itapema
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -326,6 +326,7 @@
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
+  let code = imgAuthor.dataset.paymentCode;
   let artInfo = {
     "title": imgTitle,
     "email": email,
@@ -333,7 +334,8 @@
     "src": imgUrl,
     "price": price,
     "dimensions": dimensions,
-    "standard": standard
+    "standard": standard,
+    "payment": code
   }    
   
   const checkoutBtn = document.getElementById('checkout-btn');

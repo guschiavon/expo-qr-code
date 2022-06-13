@@ -121,7 +121,7 @@ A sua força mostra o a Mar."</p>
 </picture>
         
       </div>
-      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="" data-payment-code="">
         Bruno Santos
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -299,6 +299,7 @@ A sua força mostra o a Mar."</p>
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
+  let code = imgAuthor.dataset.paymentCode;
   let artInfo = {
     "title": imgTitle,
     "email": email,
@@ -306,7 +307,8 @@ A sua força mostra o a Mar."</p>
     "src": imgUrl,
     "price": price,
     "dimensions": dimensions,
-    "standard": standard
+    "standard": standard,
+    "payment": code
   }    
   
   const checkoutBtn = document.getElementById('checkout-btn');

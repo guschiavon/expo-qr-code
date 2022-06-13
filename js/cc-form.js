@@ -35,4 +35,7 @@ formEl.addEventListener("submit", function (e) {
   request.open(formEl.method, formEl.action);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   request.send(getFormDataString(formEl));
+
+  
+
 });

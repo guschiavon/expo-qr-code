@@ -117,7 +117,7 @@
 </picture>
         
       </div>
-      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="hello@itsgus.dev">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="hello@itsgus.dev" data-payment-code="b64c9d9f-4fff-4901-affc-b729383f5970">
         Gus Schiavon
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -295,6 +295,7 @@
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
+  let code = imgAuthor.dataset.paymentCode;
   let artInfo = {
     "title": imgTitle,
     "email": email,
@@ -302,7 +303,8 @@
     "src": imgUrl,
     "price": price,
     "dimensions": dimensions,
-    "standard": standard
+    "standard": standard,
+    "payment": code
   }    
   
   const checkoutBtn = document.getElementById('checkout-btn');

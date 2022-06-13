@@ -65,7 +65,7 @@ description: Imagens de artistas curitibanos expostas durante a exposição RECO
       <div class="rounded-full h-32 w-32 overflow-hidden" >
         {% picture jpt-webp "{{artist.profile_image | default: '/assets/images/user.png' }}" --picture class="object-cover w-full h-full" --img alt="{{artist.name}} foto de perfil" %}        
       </div>
-      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="{{artist.email}}">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="{{artist.email}}" data-payment-code="{{artist.pixCode}}">
         {{artist.name}}
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -148,6 +148,7 @@ description: Imagens de artistas curitibanos expostas durante a exposição RECO
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
+  let code = imgAuthor.dataset.paymentCode;
   let artInfo = {
     "title": imgTitle,
     "email": email,
@@ -155,7 +156,8 @@ description: Imagens de artistas curitibanos expostas durante a exposição RECO
     "src": imgUrl,
     "price": price,
     "dimensions": dimensions,
-    "standard": standard
+    "standard": standard,
+    "payment": code
   }    
   
   const checkoutBtn = document.getElementById('checkout-btn');
