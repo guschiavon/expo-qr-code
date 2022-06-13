@@ -16,7 +16,7 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
     <div class="h-50 md:h-96 overflow-hidden rounded-md flex-shrink-0" >
       {% picture jpt-webp "{{page.image | default: '/assets/images/placeholder.jpg'}}" --img id="img-src" class="object-cover md:object-contain w-full h-full" %}
     </div>
-    <p class="text-xl lg:text-2xl font-light">{{page.description_html | prepend: '"' | append: '"' }}</p>    
+    <p class="text-xl lg:text-2xl font-light">{{page.description_html}}</p>    
     <div class="flex flex-col gap-2">
       <h1 id="feat-img" class="feat-image-title" data-feat-img-title="{{page.title}}">{{page.title}}</h1>
       <div>
