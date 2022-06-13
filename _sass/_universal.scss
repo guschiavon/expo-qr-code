@@ -10,7 +10,9 @@ h5 {
 p,
 p > *,
 a,
-span {
+span,
+ul li,
+ol li {
   @apply
   font-body;
 }
