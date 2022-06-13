@@ -73,3 +73,19 @@ span {
   md:w-20
   mx-auto;
 }
+
+.checkout-form {
+  @apply
+  
+  flex
+  flex-col
+  gap-2;  
+  input {
+    @apply
+    font-body
+    p-2
+    rounded-sm
+    border-2
+    border-yellow-400;
+  }
+}

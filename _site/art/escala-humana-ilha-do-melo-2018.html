@@ -46,27 +46,31 @@
 
 <main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
   <div class="flex flex-col gap-8 mb-6">    
-    <div class="h-50 md:h-auto overflow-hidden rounded-md flex-shrink-0" >
-      <picture class="object-contain w-full h-full">
+    <div class="h-50 md:h-96 overflow-hidden rounded-md flex-shrink-0" >
+      <picture>
   <source srcset="/srcset/assets/images/mg-6420-1-400-68f9db9d5.webp 400w, /srcset/assets/images/mg-6420-1-600-68f9db9d5.webp 600w, /srcset/assets/images/mg-6420-1-800-68f9db9d5.webp 800w, /srcset/assets/images/mg-6420-1-1000-68f9db9d5.webp 1000w" type="image/webp">
   <source srcset="/srcset/assets/images/mg-6420-1-400-f581e8987.jpg 400w, /srcset/assets/images/mg-6420-1-600-f581e8987.jpg 600w, /srcset/assets/images/mg-6420-1-800-f581e8987.jpg 800w, /srcset/assets/images/mg-6420-1-1000-f581e8987.jpg 1000w" type="image/jpeg">
-  <img src="/srcset/assets/images/mg-6420-1-800-f581e8987.jpg">
+  <img id="img-src" class="object-cover md:object-contain w-full h-full" src="/srcset/assets/images/mg-6420-1-800-f581e8987.jpg">
 </picture>
 
     </div>
     <p class="text-xl lg:text-2xl font-light">"Vista do final de tarde, do Farol das Conchas, Ilha de Mel."</p>    
     <div class="flex flex-col gap-2">
-      <h1 class="feat-image-title">Escala Humana_Ilha do Mel_2018</h1>
+      <h1 id="feat-img" class="feat-image-title" data-feat-img-title="Escala Humana_Ilha do Mel_2018">Escala Humana_Ilha do Mel_2018</h1>
       <div>
         <p class="feat-image-artist">Imagem de Bruno Santos</p>  
               
       </div>
-      <p class="text-lg font-bold">Dimensões: 60x90 cm</p>
-      <p>Impressão em Felix Schoeller True Fibre 200g/m2</p>
-      <p>Tiragem limitada a 10 impressões</p>
+      <p class="text-lg font-bold">Especificações:</p>
+      <ul>
+        <li id="art-dimensions" class="list-inside list-disc">Dimensões: 60x90 cm</li>
+        <li id="art-standard" class="list-inside list-disc">Impressão em papel Felix Schoeller True Fibre 200g/m2</li>
+        <li class="list-inside list-disc">Montagem com vidro anti-reflexo</li>        
+        <li id="art-prints" class="list-inside list-disc">Tiragem limitada a 10 impressões</li>      
+      </ul>
 
       <div class="flex gap-2 items-center mb-5">
-        <p>Qualidade </p>
+        <p>Impressões com qualidade </p>
         <div class="w-24">
           <picture>
   <source srcset="/srcset/assets/images/farbewerk-400-7284e663c.webp 400w, /srcset/assets/images/farbewerk-600-7284e663c.webp 600w, /srcset/assets/images/farbewerk-800-7284e663c.webp 800w, /srcset/assets/images/farbewerk-1000-7284e663c.webp 1000w" type="image/webp">
@@ -76,10 +80,23 @@
           
         </div>
       </div>
-      <p class="feat-image-price">R$2000</p>
-      <div class="mb-6">
-        <a href="mailto:" target="_blank" class="px-3 py-2 inline-block text-gray-700 bg-yellow-400 hover:bg-yellow-700 transition-colors uppercase">
-          Entre em contato
+      <p id="art-price" class="feat-image-price">R$2000</p>
+      <div class="flex gap-2 mb-6">
+        <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
+          Compre agora
+        </a>
+        <a href="https://wa.me/" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
+          <div class="inline-block w-4 h-4">
+            
+
+  <svg viewBox="-23 -21 682 682.66669" xmlns="http://www.w3.org/2000/svg" fill="#333">
+    <path d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0" />
+  </svg>
+
+
+
+
+          </div>
         </a>
       </div>
       <p class="text-xs">
@@ -100,7 +117,7 @@
 </picture>
         
       </div>
-      <h2 class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500">
+      <h2 id="artist-name" class="font-bold text-4xl text-gray-200 border-b-2 border-yellow-500" data-email="">
         Bruno Santos
       </h2>
       <div class="flex flex-row items-center justify-items-start gap-3">
@@ -264,6 +281,37 @@
   </div>
 </section>
 
+<script>
+  const imgId = document.getElementById('feat-img');
+  const imgSrc = document.getElementById('img-src');
+  const imgDimensions = document.getElementById('art-dimensions');
+  const imgStandard = document.getElementById('art-standard');
+  const imgPrice = document.getElementById('art-price');
+  const imgAuthor = document.getElementById('artist-name');
+  let imgTitle = imgId.dataset.featImgTitle;
+  let imgUrl = imgSrc.src;
+  let price = imgPrice.innerText;
+  let dimensions = imgDimensions.innerText;
+  let standard = imgStandard.innerText;
+  let artist = imgAuthor.innerText;
+  let email = imgAuthor.dataset.email;
+  let artInfo = {
+    "title": imgTitle,
+    "email": email,
+    "author": artist,
+    "src": imgUrl,
+    "price": price,
+    "dimensions": dimensions,
+    "standard": standard
+  }    
+  
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  checkoutBtn.addEventListener('click', function(){        
+    let artJSON = JSON.stringify(artInfo);
+    sessionStorage.setItem('image',artJSON);
+  });
+</script>
         <div class="container mx-auto py-4 px-4">
           <p class="text-sm text-yellow-400 font-body font-light mb-2">Todas as imagens e textos sob copyright dos artistas.</p>
           <p class="text-sm text-yellow-400 font-body font-light">Website desenvolvido por <a href="https://instagram.com/schiavon.gus" rel="noopener noreferrer" target="_blank" class="text-green-400 hover:text-green-600 transition-colors font-regular">Gus Schiavon</a>.</p>
@@ -272,5 +320,6 @@
       
       <!-- All of your non-critical scripts can go here -->
 <script src="/js/site.js" type="text/javascript"></script>
+      
     </body>
   </html>
