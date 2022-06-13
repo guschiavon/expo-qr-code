@@ -35,7 +35,7 @@
 </head>
     <body class="min-h-screen flex flex-col overflow-x-hidden bg-gray-800">
       <div class="flex-1 md:py-8">
-        <main class="container mx-auto py-12">
+        <main class="container mx-auto py-12 px-2 md:px-0">
   <hr class="border-b-4 border-yellow-400 mb-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="col-span-1">
@@ -60,6 +60,7 @@
           <code id="payment-code" class="bg-gray-200 text-gray-700 p-2 rounded-sm"></code>
           <p class="text-gray-600 text-sm">(clique para copiar)</p>
         </div>
+        <p id="img-value" class="text-yellow-400 font-bold text-3xl font-body uppercase"></p>
         <p class="text-gray-200 uppercase font-body text-xl my-4"><span class="text-xl font-bold">3.</span> Confirme o pedido após pagamento:</p>
         <input type="submit" value="Confirmar pedido" class="md:w-1/3 mr-auto bg-yellow-400 uppercase text-lg hover:bg-yellow-300 transition-colors">
       </form>
@@ -89,8 +90,7 @@
 </picture>
 
             </div>
-          </div>  
-          <p id="img-price" class="font-bold text-3xl font-body uppercase"></p>        
+          </div>            
         </div>
       </div>
     </div>
@@ -107,8 +107,8 @@
   const imgEl = document.getElementById('selected-img');
   const title = document.getElementById('img-title');
   const dimensions = document.getElementById('img-dimensions');
-  const standard = document.getElementById('img-standard');
-  const price = document.getElementById('img-price');
+  const standard = document.getElementById('img-standard');  
+  const value = document.getElementById('img-value');
   const artist = document.getElementById('img-author');
   const reference = document.getElementById('img-name');
   const contact = document.getElementById('to-email');
@@ -118,8 +118,8 @@
 
   imgEl.src = imageJSON.src;
   dimensions.innerText = imageJSON.dimensions;
-  standard.innerText = imageJSON.standard;
-  price.innerText = imageJSON.price;
+  standard.innerText = imageJSON.standard;  
+  value.innerText = imageJSON.price;
   title.innerText = imageJSON.title;
   reference.innerText = imageJSON.title;
   artist.innerText = imageJSON.author;
