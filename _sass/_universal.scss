@@ -31,7 +31,8 @@ ol li {
   @apply
   font-heading
   uppercase
-  text-lg
+  text-base
+  sm:text-lg
   md:text-xl;
 }
 

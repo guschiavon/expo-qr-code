@@ -11,7 +11,7 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
 {% assign cocreator = site.data.creators.poets | where_exp: "artist", "artist._nickname contains coname" %}
 {% for artist in creator %}
 
-<main class="container mx-auto px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
+<main class="container mx-auto px-6 md:px-12 py-12 bg-gray-100 md:border-2 border-gray-500 shadow-lg md:rounded-md md:mb-6">
   <div class="flex flex-col gap-8 mb-6">    
     <div class="h-50 md:h-96 overflow-hidden rounded-md flex-shrink-0" >
       {% picture jpt-webp "{{page.image | default: '/assets/images/placeholder.jpg'}}" --img id="img-src" class="object-cover md:object-contain w-full h-full" %}
@@ -27,13 +27,13 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc" >{{page.dimensions | prepend: "Dimensões em exposição: "}}</li>
+        <li id="art-dimensions" class="text-xs md:text-sm list-inside list-disc" >{{page.dimensions | prepend: "Dimensões em exposição: "}}</li>
         {% if page.other_dimensions.size > 0 %}
-        <li class="text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
+        <li class="text-xs md:text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
         {% endif %}
-        <li id="art-standard" class="text-sm list-inside list-disc">{{page.print_standard | prepend: 'Impressão em papel '}}</li>
-        <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
-        <li id="art-prints" class="text-sm list-inside list-disc">{{page.number_of_prints | prepend: 'Tiragem limitada a ' | append: ' impressões'}}</li>      
+        <li id="art-standard" class="text-xs md:text-sm list-inside list-disc">{{page.print_standard | prepend: 'Impressão em papel '}}</li>
+        <li class="text-xs md:text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
+        <li id="art-prints" class="text-xs md:text-sm list-inside list-disc">{{page.number_of_prints | prepend: 'Tiragem limitada a ' | append: ' impressões'}}</li>      
       </ul>
 
       <div class="flex gap-2 items-center mb-5">
@@ -53,7 +53,7 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
       </select>         
       
       <!-- <p id="art-price" class="feat-image-price">{{page.price | prepend: "R$" }}</p> -->
-      <div class="flex flex-col md:flex-row gap-2 mb-6">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-2 mb-6">
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
           Adquira agora
         </a>
@@ -116,7 +116,7 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
   </div>
 </section>
 {% endfor %}
-<section class="container mx-auto py-12 px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
+<section class="container mx-auto py-12 px-6 md:px-12 bg-gray-100 md:border-2 border-gray-500 md:rounded-md shadow-lg">
   <h2 class="font-bold text-2xl mb-6 text-yellow-600 uppercase">Mais imagens por {{artist.name}}:</h2>  
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {% assign other_images = site.art | where_exp: "item", "item.artist contains pname"%}
@@ -128,7 +128,7 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
         </div>
         <div class="flex flex-col justify-between gap-4 bg-gray-300 p-6 rounded-b-md">
           <h3 class="font-bold text-2xl">{{item.title}}</h3>
-          <div class="flex gap-2">
+          <div class="flex items-center gap-2">
             <p class="art-info-text">
               {{item.dimensions}}
             </p>
@@ -140,6 +140,12 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
           <p class="art-info-text">
             Impressão em papel {{item.print_standard}}
           </p>
+          <div class="flex gap-2 items-center">
+            <p class="font-body">Qualidade </p>
+            <div class="w-24">
+              {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}
+            </div>
+          </div>
         </div>
       </div>
     </a>
