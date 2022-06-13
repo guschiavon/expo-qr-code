@@ -15,12 +15,12 @@
 <meta property="og:image:width" content="600" />
 <meta property="og:image:alt" content="" />
 <meta property="og:site_name" content="RECONECTA - Exposição de Imagens">
-<meta property="og:description" content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?">
+<meta property="og:description" content="<p>Curvar-me aquilo que me &eacute; essencial</p>">
 <!-- <meta property="fb:app_id" content=""> -->
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Maracaípe">
-<meta name="twitter:description" content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?">
+<meta name="twitter:description" content="<p>Curvar-me aquilo que me &eacute; essencial</p>">
 <meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
 </picture>
 
     </div>
-    <p class="text-xl lg:text-2xl font-light">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eos iusto beatae vero, consequuntur quas impedit magni maxime aut porro veritatis, dolor harum placeat quasi tenetur sequi repudiandae incidunt vel?"</p>    
+    <p class="text-xl lg:text-2xl font-light"><p>Curvar-me aquilo que me &eacute; essencial</p></p>    
     <div class="flex flex-col gap-2">
       <h1 id="feat-img" class="feat-image-title" data-feat-img-title="Maracaípe">Maracaípe</h1>
       <div>
@@ -65,10 +65,13 @@
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc">Dimensões: 60cm x 90cm</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="60cm x 90cm">Dimensões em exposição: 60cm x 90cm</li>
+        
+        <li class="text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
+        
         <li id="art-standard" class="text-sm list-inside list-disc">Impressão em papel Felix Schoeller True Fibre 200g/m2</li>
         <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
-        <li id="art-prints" class="text-sm list-inside list-disc">Tiragem limitada a 5 impressões</li>      
+        <li id="art-prints" class="text-sm list-inside list-disc">Tiragem limitada a 10 impressões</li>      
       </ul>
 
       <div class="flex gap-2 items-center mb-5">
@@ -82,10 +85,20 @@
           
         </div>
       </div>
-      <p id="art-price" class="feat-image-price">R$1800</p>
+      <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
+      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+        <option value="1800" data-dimensions="60cm x 90cm">60cm x 90cm - R$1800</option>
+        
+        
+        <option value="1200" data-dimensions="60cm x 40cm">60cm x 40cm - R$1200</option>
+        
+        
+      </select>         
+      
+      <!-- <p id="art-price" class="feat-image-price">R$1800</p> -->
       <div class="flex flex-col md:flex-row gap-2 mb-6">
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
-          Compre agora
+          Adquira agora
         </a>
         <a id="wa-tel" href="https://wa.me/+5541991733445" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
           <div class="inline-block w-4 h-4">
@@ -183,7 +196,7 @@
           <h3 class="font-bold text-2xl">Contrastes</h3>
           <div class="flex gap-2">
             <p class="art-info-text">
-              60cm x 90cm
+              60cm x 40cm
             </p>
             <span>|</span>
             <p class="art-info-text">
@@ -243,7 +256,7 @@
             </p>
             <span>|</span>
             <p class="art-info-text">
-              Tiragem limitada 1/5
+              Tiragem limitada 1/10
             </p>
           </div>
           <p class="art-info-text">
@@ -271,7 +284,7 @@
             </p>
             <span>|</span>
             <p class="art-info-text">
-              Tiragem limitada 1/10
+              Tiragem limitada 1/5
             </p>
           </div>
           <p class="art-info-text">
@@ -320,29 +333,29 @@
   const imgPrice = document.getElementById('art-price');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
-  let imgUrl = imgSrc.src;
-  let price = imgPrice.innerText;
-  let dimensions = imgDimensions.innerText;
+  let imgUrl = imgSrc.src;      
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
   let wa = imgAuthor.dataset.wa;  
   let code = imgAuthor.dataset.paymentCode;
-  let artInfo = {
-    "title": imgTitle,
-    "email": email,
-    "whatsapp": wa,
-    "author": artist,
-    "src": imgUrl,
-    "price": price,
-    "dimensions": dimensions,
-    "standard": standard,
-    "payment": code
-  }    
   
   const checkoutBtn = document.getElementById('checkout-btn');
-
+  
   checkoutBtn.addEventListener('click', function(){        
+    let price = imgPrice.value;   
+    let dimensions = imgPrice.dataset.dimensions;
+    let artInfo = {
+      "title": imgTitle,
+      "email": email,
+      "whatsapp": wa,
+      "author": artist,
+      "src": imgUrl,
+      "price": price,
+      "dimensions": dimensions,
+      "standard": standard,
+      "payment": code
+    }    
     let artJSON = JSON.stringify(artInfo);
     sessionStorage.setItem('image',artJSON);
   });

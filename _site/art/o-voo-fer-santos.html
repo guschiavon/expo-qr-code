@@ -54,7 +54,7 @@
 </picture>
 
     </div>
-    <p class="text-xl lg:text-2xl font-light">"<p>Sonho com o mundo em que o amor &eacute; o caminho, em que a emo&ccedil;&atilde;o transborda e o carinho bate a porta.</p><p>&nbsp;</p><p>Observo um planeta em que tudo &eacute; passageiro e os passageiros somos n&oacute;s, em que a verdade n&atilde;o tem voz e, quando exposta, logo recebe contraproposta. &nbsp;</p><p>&nbsp;</p><p>Acordo no lugar em que a dor &eacute; latente e a crueldade ligeira(mente) ser&aacute; vencida pelo bem.</p><p>&nbsp;</p><p>Acredito e sonho com a verdade crescente, olhares transparentes, sorrisos verdadeiros, abra&ccedil;os fraternos, amores eternos, com a pureza da alma, sentimento que acalma.</p>"</p>    
+    <p class="text-xl lg:text-2xl font-light"><p>Sonho com o mundo em que o amor &eacute; o caminho, em que a emo&ccedil;&atilde;o transborda e o carinho bate a porta.</p><p>&nbsp;</p><p>Observo um planeta em que tudo &eacute; passageiro e os passageiros somos n&oacute;s, em que a verdade n&atilde;o tem voz e, quando exposta, logo recebe contraproposta. &nbsp;</p><p>&nbsp;</p><p>Acordo no lugar em que a dor &eacute; latente e a crueldade ligeira(mente) ser&aacute; vencida pelo bem.</p><p>&nbsp;</p><p>Acredito e sonho com a verdade crescente, olhares transparentes, sorrisos verdadeiros, abra&ccedil;os fraternos, amores eternos, com a pureza da alma, sentimento que acalma.</p></p>    
     <div class="flex flex-col gap-2">
       <h1 id="feat-img" class="feat-image-title" data-feat-img-title="O Vôo">O Vôo</h1>
       <div>
@@ -65,7 +65,10 @@
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc">Dimensões: 40cm x 60cm</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="40cm x 60cm">Dimensões em exposição: 40cm x 60cm</li>
+        
+        <li class="text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
+        
         <li id="art-standard" class="text-sm list-inside list-disc">Impressão em papel Felix Schoeller True Fibre 200g/m2</li>
         <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
         <li id="art-prints" class="text-sm list-inside list-disc">Tiragem limitada a 10 impressões</li>      
@@ -82,10 +85,20 @@
           
         </div>
       </div>
-      <p id="art-price" class="feat-image-price">R$1300</p>
+      <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
+      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+        <option value="1300" data-dimensions="40cm x 60cm">40cm x 60cm - R$1300</option>
+        
+        
+        <option value="" data-dimensions="90cm x 60cm">90cm x 60cm - R$</option>
+        
+        
+      </select>         
+      
+      <!-- <p id="art-price" class="feat-image-price">R$1300</p> -->
       <div class="flex flex-col md:flex-row gap-2 mb-6">
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
-          Compre agora
+          Adquira agora
         </a>
         <a id="wa-tel" href="https://wa.me/+554199581434" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
           <div class="inline-block w-4 h-4">
@@ -320,29 +333,29 @@
   const imgPrice = document.getElementById('art-price');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
-  let imgUrl = imgSrc.src;
-  let price = imgPrice.innerText;
-  let dimensions = imgDimensions.innerText;
+  let imgUrl = imgSrc.src;      
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
   let wa = imgAuthor.dataset.wa;  
   let code = imgAuthor.dataset.paymentCode;
-  let artInfo = {
-    "title": imgTitle,
-    "email": email,
-    "whatsapp": wa,
-    "author": artist,
-    "src": imgUrl,
-    "price": price,
-    "dimensions": dimensions,
-    "standard": standard,
-    "payment": code
-  }    
   
   const checkoutBtn = document.getElementById('checkout-btn');
-
+  
   checkoutBtn.addEventListener('click', function(){        
+    let price = imgPrice.value;   
+    let dimensions = imgPrice.dataset.dimensions;
+    let artInfo = {
+      "title": imgTitle,
+      "email": email,
+      "whatsapp": wa,
+      "author": artist,
+      "src": imgUrl,
+      "price": price,
+      "dimensions": dimensions,
+      "standard": standard,
+      "payment": code
+    }    
     let artJSON = JSON.stringify(artInfo);
     sessionStorage.setItem('image',artJSON);
   });

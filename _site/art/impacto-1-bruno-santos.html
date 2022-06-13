@@ -15,12 +15,12 @@
 <meta property="og:image:width" content="600" />
 <meta property="og:image:alt" content="" />
 <meta property="og:site_name" content="RECONECTA - Exposição de Imagens">
-<meta property="og:description" content="Qual é o caminho que estamos trilhando? Para onde esse caminho vai nos levar?">
+<meta property="og:description" content="<p>Na areia da arena</p><p>onde o pl&aacute;stico virou rei</p>">
 <!-- <meta property="fb:app_id" content=""> -->
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Pegada Humana II_Ilha das Peças_2019">
-<meta name="twitter:description" content="Qual é o caminho que estamos trilhando? Para onde esse caminho vai nos levar?">
+<meta name="twitter:description" content="<p>Na areia da arena</p><p>onde o pl&aacute;stico virou rei</p>">
 <meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
 </picture>
 
     </div>
-    <p class="text-xl lg:text-2xl font-light">"Qual é o caminho que estamos trilhando? Para onde esse caminho vai nos levar?"</p>    
+    <p class="text-xl lg:text-2xl font-light"><p>Na areia da arena</p><p>onde o pl&aacute;stico virou rei</p></p>    
     <div class="flex flex-col gap-2">
       <h1 id="feat-img" class="feat-image-title" data-feat-img-title="Pegada Humana II_Ilha das Peças_2019">Pegada Humana II_Ilha das Peças_2019</h1>
       <div>
@@ -63,7 +63,8 @@
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc">Dimensões: 40cm x 60cm</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="40cm x 60cm">Dimensões em exposição: 40cm x 60cm</li>
+        
         <li id="art-standard" class="text-sm list-inside list-disc">Impressão em papel Felix Schoeller True Fibre 200g/m2</li>
         <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
         <li id="art-prints" class="text-sm list-inside list-disc">Tiragem limitada a 10 impressões</li>      
@@ -80,10 +81,16 @@
           
         </div>
       </div>
-      <p id="art-price" class="feat-image-price">R$1300</p>
+      <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
+      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+        <option value="1300" data-dimensions="40cm x 60cm">40cm x 60cm - R$1300</option>
+        
+      </select>         
+      
+      <!-- <p id="art-price" class="feat-image-price">R$1300</p> -->
       <div class="flex flex-col md:flex-row gap-2 mb-6">
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
-          Compre agora
+          Adquira agora
         </a>
         <a id="wa-tel" href="https://wa.me/+554196828684" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
           <div class="inline-block w-4 h-4">
@@ -289,29 +296,29 @@
   const imgPrice = document.getElementById('art-price');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
-  let imgUrl = imgSrc.src;
-  let price = imgPrice.innerText;
-  let dimensions = imgDimensions.innerText;
+  let imgUrl = imgSrc.src;      
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
   let wa = imgAuthor.dataset.wa;  
   let code = imgAuthor.dataset.paymentCode;
-  let artInfo = {
-    "title": imgTitle,
-    "email": email,
-    "whatsapp": wa,
-    "author": artist,
-    "src": imgUrl,
-    "price": price,
-    "dimensions": dimensions,
-    "standard": standard,
-    "payment": code
-  }    
   
   const checkoutBtn = document.getElementById('checkout-btn');
-
+  
   checkoutBtn.addEventListener('click', function(){        
+    let price = imgPrice.value;   
+    let dimensions = imgPrice.dataset.dimensions;
+    let artInfo = {
+      "title": imgTitle,
+      "email": email,
+      "whatsapp": wa,
+      "author": artist,
+      "src": imgUrl,
+      "price": price,
+      "dimensions": dimensions,
+      "standard": standard,
+      "payment": code
+    }    
     let artJSON = JSON.stringify(artInfo);
     sessionStorage.setItem('image',artJSON);
   });

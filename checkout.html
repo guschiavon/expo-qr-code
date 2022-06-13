@@ -86,9 +86,9 @@ scripts_code_block: >-
     imgEl.src = imageJSON.src;
     dimensions.innerText = imageJSON.dimensions;
     standard.innerText = imageJSON.standard;  
-    value.innerText = imageJSON.price;
+    value.innerText = 'R$' + imageJSON.price;
     title.innerText = imageJSON.title;
-    reference.innerText = imageJSON.title;
+    reference.innerText = imageJSON.title + ' - ' + imageJSON.dimensions;
     artist.innerText = imageJSON.author;
     payment.innerText = imageJSON.payment;
     reference.setAttribute('value',imageJSON.title);

@@ -27,7 +27,10 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
       </div>
       <p class="text-lg font-bold">Especificações:</p>
       <ul>
-        <li id="art-dimensions" class="text-sm list-inside list-disc">{{page.dimensions | prepend: "Dimensões: "}}</li>
+        <li id="art-dimensions" class="text-sm list-inside list-disc" data-specimen-dimensions="{{page.dimensions}}">{{page.dimensions | prepend: "Dimensões em exposição: "}}</li>
+        {% if page.other_dimensions.size > 0 %}
+        <li class="text-sm font-semibold list-inside list-disc">Outros tamanhos também disponíveis; consulte-nos.</li>            
+        {% endif %}
         <li id="art-standard" class="text-sm list-inside list-disc">{{page.print_standard | prepend: 'Impressão em papel '}}</li>
         <li class="text-sm list-inside list-disc">Montagem com vidro anti-reflexo</li>        
         <li id="art-prints" class="text-sm list-inside list-disc">{{page.number_of_prints | prepend: 'Tiragem limitada a ' | append: ' impressões'}}</li>      
@@ -39,10 +42,20 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
           {% picture jpt-webp "/assets/images/farbewerk.png" --img alt="farbewerk logo" class="object-contain w-full h-full"%}          
         </div>
       </div>
-      <p id="art-price" class="feat-image-price">{{page.price | prepend: "R$" }}</p>
+      <p class="font-semibold font-heading uppercase text-gray-700">Selecione o tamanho:</p>
+      <select name="price" id="art-price" class="md:w-1/4 p-2 font-body font-light border-2 border-gray-500 rounded-sm">
+        <option value="{{page.price}}" data-dimensions="{{page.dimensions}}">{{page.dimensions}} - {{page.price | prepend: 'R$'}}</option>
+        {% if page.other_dimensions.size > 0 %}
+        {% for dimension in page.other_dimensions %}
+        <option value="{{dimension.price}}" data-dimensions="{{dimension.size}}">{{dimension.size}} - {{dimension.price | prepend: 'R$'}}</option>
+        {% endfor %}
+        {% endif %}
+      </select>         
+      
+      <!-- <p id="art-price" class="feat-image-price">{{page.price | prepend: "R$" }}</p> -->
       <div class="flex flex-col md:flex-row gap-2 mb-6">
         <a id="checkout-btn" href="/checkout" class="px-3 py-2 inline-flex items-center text-gray-700 bg-yellow-400 hover:bg-yellow-200 transition-colors uppercase">
-          Compre agora
+          Adquira agora
         </a>
         <a id="wa-tel" href="https://wa.me/{{artist.whatsapp}}" target="_blank" class="px-3 py-2 inline-flex items-center gap-1 text-gray-700 border-2 border-yellow-400 hover:bg-yellow-600 transition-colors uppercase">Entre em contato 
           <div class="inline-block w-4 h-4">
@@ -142,29 +155,29 @@ description_html: Imagens de artistas curitibanos expostas durante a exposição
   const imgPrice = document.getElementById('art-price');
   const imgAuthor = document.getElementById('artist-name');  
   let imgTitle = imgId.dataset.featImgTitle;
-  let imgUrl = imgSrc.src;
-  let price = imgPrice.innerText;
-  let dimensions = imgDimensions.innerText;
+  let imgUrl = imgSrc.src;      
   let standard = imgStandard.innerText;
   let artist = imgAuthor.innerText;
   let email = imgAuthor.dataset.email;
   let wa = imgAuthor.dataset.wa;  
   let code = imgAuthor.dataset.paymentCode;
-  let artInfo = {
-    "title": imgTitle,
-    "email": email,
-    "whatsapp": wa,
-    "author": artist,
-    "src": imgUrl,
-    "price": price,
-    "dimensions": dimensions,
-    "standard": standard,
-    "payment": code
-  }    
   
   const checkoutBtn = document.getElementById('checkout-btn');
-
+  
   checkoutBtn.addEventListener('click', function(){        
+    let price = imgPrice.value;   
+    let dimensions = imgPrice.dataset.dimensions;
+    let artInfo = {
+      "title": imgTitle,
+      "email": email,
+      "whatsapp": wa,
+      "author": artist,
+      "src": imgUrl,
+      "price": price,
+      "dimensions": dimensions,
+      "standard": standard,
+      "payment": code
+    }    
     let artJSON = JSON.stringify(artInfo);
     sessionStorage.setItem('image',artJSON);
   });
